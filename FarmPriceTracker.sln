@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FarmPriceTracker", "FarmPriceTracker\FarmPriceTracker.csproj", "{F7ABB9C8-569B-49D6-B965-B4035D66DBC0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FarmSimulator22Integrations", "FarmSimulator22Integrations\FarmSimulator22Integrations.csproj", "{35C83C13-69D7-4207-85FA-0C92AF16DA9B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{F7ABB9C8-569B-49D6-B965-B4035D66DBC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F7ABB9C8-569B-49D6-B965-B4035D66DBC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F7ABB9C8-569B-49D6-B965-B4035D66DBC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35C83C13-69D7-4207-85FA-0C92AF16DA9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35C83C13-69D7-4207-85FA-0C92AF16DA9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35C83C13-69D7-4207-85FA-0C92AF16DA9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35C83C13-69D7-4207-85FA-0C92AF16DA9B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
