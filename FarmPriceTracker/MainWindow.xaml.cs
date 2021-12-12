@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Text.Json;
 using System.Windows;
+using System.Windows.Input;
 using AssemblyScanning;
 using FarmSimulator22Integrations.Parsers;
 using Microsoft.Extensions.DependencyInjection;
@@ -18,5 +19,9 @@ public partial class MainWindow : Window {
     var test = Fs22Map.CreateInstance();
 
     Console.WriteLine($"map: {JsonSerializer.Serialize(test.Map)}");
+  }
+
+  private void CommandBinding_OnExecuted(object sender, ExecutedRoutedEventArgs e) {
+    Application.Current.Shutdown();
   }
 }
