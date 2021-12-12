@@ -1,28 +1,27 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Text.Json;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using AssemblyScanning;
+using FarmSimulator22Integrations.Parsers;
+using Microsoft.Extensions.DependencyInjection;
 
-namespace FarmPriceTracker
-{
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
-    public partial class MainWindow : Window
-    {
-        public MainWindow()
-        {
-            InitializeComponent();
-        }
-    }
+namespace FarmPriceTracker;
+
+/// <summary>
+///   Interaction logic for MainWindow.xaml
+/// </summary>
+[Inject(serviceLifetime: ServiceLifetime.Singleton, provideFor: typeof(MainWindow))]
+public partial class MainWindow : Window {
+  public MainWindow() {
+    InitializeComponent();
+
+    var test = Fs22Map.CreateInstance();
+
+    Console.WriteLine($"map: {JsonSerializer.Serialize(test.Map)}");
+  }
+
+  private void CommandBinding_OnExecuted(object sender, ExecutedRoutedEventArgs e) {
+    Application.Current.Shutdown();
+  }
 }

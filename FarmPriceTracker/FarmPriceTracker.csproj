@@ -7,4 +7,15 @@
         <UseWPF>true</UseWPF>
     </PropertyGroup>
 
+    <ItemGroup>
+        <PackageReference Include="MaterialDesignThemes" Version="4.4.0-ci16-ci16" />
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
+        <PackageReference Include="ShowMeTheXAML.MSBuild" Version="2.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\AssemblyScanning\AssemblyScanning.csproj" />
+        <ProjectReference Include="..\FarmSimulator22Integrations\FarmSimulator22Integrations.csproj" />
+    </ItemGroup>
+
 </Project>
