@@ -10,7 +10,7 @@
                 <ResourceDictionary
                     Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
             </ResourceDictionary.MergedDictionaries>
-            <Style x:Key="DefaultButton" TargetType="{x:Type Button}"
+            <Style TargetType="{x:Type Button}"
                    BasedOn="{StaticResource MaterialDesignRaisedSecondaryDarkButton}" />
         </ResourceDictionary>
     </Application.Resources>
