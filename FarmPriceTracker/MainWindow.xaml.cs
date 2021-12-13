@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Text.Json;
-using System.Windows;
-using System.Windows.Input;
 using AssemblyScanning;
+using FarmPriceTracker.ViewModels;
 using FarmSimulator22Integrations.Parsers;
 using Microsoft.Extensions.DependencyInjection;
+using ReactiveUI;
+using Splat;
 
 namespace FarmPriceTracker;
 
@@ -12,16 +13,19 @@ namespace FarmPriceTracker;
 ///   Interaction logic for MainWindow.xaml
 /// </summary>
 [Inject(serviceLifetime: ServiceLifetime.Singleton, provideFor: typeof(MainWindow))]
-public partial class MainWindow : Window {
+public partial class MainWindow {
   public MainWindow() {
     InitializeComponent();
+    ViewModel = Locator.Current.GetService<MainViewModel>();
+
+    this.WhenActivated(disposableRegistrations => { });
 
     var test = Fs22Map.CreateInstance();
 
     Console.WriteLine($"map: {JsonSerializer.Serialize(test.Map)}");
   }
 
-  private void CommandBinding_OnExecuted(object sender, ExecutedRoutedEventArgs e) {
-    Application.Current.Shutdown();
-  }
+  // private void CommandBinding_OnExecuted(object sender, ExecutedRoutedEventArgs e) {
+  //   Application.Current.Shutdown();
+  // }
 }

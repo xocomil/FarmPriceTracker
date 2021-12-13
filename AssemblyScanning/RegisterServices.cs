@@ -13,7 +13,7 @@ public static class RegisterServices {
       throw new ArgumentNullException(nameof(types));
     }
 
-    var assemblies = types.Select(t => t.Assembly).ToArray();
+    Assembly[] assemblies = types.Select(t => t.Assembly).ToArray();
 
     RegisterServicesFromAssemblies(service, assemblies);
   }
@@ -27,10 +27,13 @@ public static class RegisterServices {
       throw new ArgumentNullException(nameof(assemblies));
     }
 
-    var injectedTypes = assemblies.SelectMany(assembly =>
-      assembly.DefinedTypes.Where(t => t.GetCustomAttributes(typeof(InjectAttribute), false).FirstOrDefault() != null));
+    IEnumerable<TypeInfo> injectedTypes = assemblies.SelectMany(
+      assembly => assembly.DefinedTypes.Where(
+        t => t.GetCustomAttributes(typeof(InjectAttribute), false).FirstOrDefault() != null
+      )
+    );
 
-    foreach(var injectedType in injectedTypes) {
+    foreach ( TypeInfo injectedType in injectedTypes ) {
       var attributeData = injectedType.GetCustomAttributes(typeof(InjectAttribute), false).First() as InjectAttribute;
 
       if ( attributeData == null ) {
@@ -40,10 +43,10 @@ public static class RegisterServices {
       if ( attributeData.ProvideFor != null ) {
         services.Add(new ServiceDescriptor(attributeData.ProvideFor, injectedType, attributeData.ServiceLifetime));
 
-        return;
+        continue;
       }
 
-      foreach ( var implementedInterface in injectedType.ImplementedInterfaces ) {
+      foreach ( Type implementedInterface in injectedType.ImplementedInterfaces ) {
         services.Add(new ServiceDescriptor(implementedInterface, injectedType, attributeData.ServiceLifetime));
       }
     }
