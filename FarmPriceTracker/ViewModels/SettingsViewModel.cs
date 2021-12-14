@@ -6,6 +6,7 @@ using System.Linq;
 using System.Reactive;
 using System.Reactive.Linq;
 using System.Windows;
+using System.Windows.Forms;
 using AssemblyScanning;
 using FarmPriceTracker.Windows;
 using Microsoft.Extensions.DependencyInjection;
@@ -39,6 +40,8 @@ public class SettingsViewModel : ReactiveValidationObject {
       .Do(model => Trace.WriteLine($"after select: {model}"))
       .ToProperty(this, x => x.DataFolderValid, scheduler: RxApp.MainThreadScheduler);
 
+    BrowseForDataFolder = ReactiveCommand.Create<Window>(OpenFileDialogForDataFolder);
+
     this.WhenAnyValue(x => x.DataFolderValid).Subscribe(valid => Trace.WriteLine($"whenanyvalue valid: {valid}"));
   }
 
@@ -50,8 +53,21 @@ public class SettingsViewModel : ReactiveValidationObject {
   }
 
   public ReactiveCommand<Window, Unit> CloseSettings { get; } = ReactiveCommand.Create<Window>(CloseSettingsWindow);
+  public ReactiveCommand<Window, Unit> BrowseForDataFolder { get; }
 
   public ValidationContext ValidationContext { get; } = new();
+
+  private void OpenFileDialogForDataFolder(Window parent) {
+    var dialog = new FolderBrowserDialog();
+
+    dialog.InitialDirectory = DataFolder;
+    dialog.Description = "Location of Data Folder";
+    dialog.UseDescriptionForTitle = true;
+
+    if ( dialog.ShowDialog() == DialogResult.OK ) {
+      DataFolder = dialog.SelectedPath;
+    }
+  }
 
   private static void CloseSettingsWindow(Window window) {
     window.Close();

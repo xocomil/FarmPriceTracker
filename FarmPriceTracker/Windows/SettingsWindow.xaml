@@ -44,6 +44,7 @@
                          Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                          VerticalAlignment="Center" />
                 <Button Grid.Column="2"
+                        x:Name="BrowseBtn"
                         Style="{StaticResource MaterialDesignFlatButton}"
                         Content="{materialDesign:PackIcon FolderOpen}"
                         ToolTip="Browse for folder" />
