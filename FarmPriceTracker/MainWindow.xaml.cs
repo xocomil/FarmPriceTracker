@@ -24,8 +24,4 @@ public partial class MainWindow {
 
     Console.WriteLine($"map: {JsonSerializer.Serialize(test.Map)}");
   }
-
-  // private void CommandBinding_OnExecuted(object sender, ExecutedRoutedEventArgs e) {
-  //   Application.Current.Shutdown();
-  // }
 }
