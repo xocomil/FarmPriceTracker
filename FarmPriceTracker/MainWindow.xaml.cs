@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reactive.Disposables;
 using System.Text.Json;
 using AssemblyScanning;
 using FarmPriceTracker.ViewModels;
@@ -18,14 +19,15 @@ public partial class MainWindow {
     InitializeComponent();
     ViewModel = Locator.Current.GetService<MainViewModel>();
 
-    this.WhenActivated(disposableRegistrations => { });
+    this.WhenActivated(
+      disposableRegistrations => {
+        this.OneWayBind(ViewModel, vm => vm.ErrorMessageQueue, view => view.ErrorSnackbar!.MessageQueue)
+          .DisposeWith(disposableRegistrations);
+      }
+    );
 
     var test = Fs22Map.CreateInstance();
 
     Console.WriteLine($"map: {JsonSerializer.Serialize(test.Map)}");
   }
-
-  // private void CommandBinding_OnExecuted(object sender, ExecutedRoutedEventArgs e) {
-  //   Application.Current.Shutdown();
-  // }
 }

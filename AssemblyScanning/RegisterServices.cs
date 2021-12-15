@@ -34,21 +34,45 @@ public static class RegisterServices {
     );
 
     foreach ( TypeInfo injectedType in injectedTypes ) {
-      var attributeData = injectedType.GetCustomAttributes(typeof(InjectAttribute), false).First() as InjectAttribute;
-
-      if ( attributeData == null ) {
+      if ( injectedType.GetCustomAttributes(typeof(InjectAttribute), false)
+            .First() is not InjectAttribute attributeData ) {
         throw new InvalidOperationException($"Could not find InjectAttribute for {injectedType}");
       }
 
       if ( attributeData.ProvideFor != null ) {
-        services.Add(new ServiceDescriptor(attributeData.ProvideFor, injectedType, attributeData.ServiceLifetime));
+        services.Add(CreateDescriptorFromAttribute(attributeData, injectedType));
 
         continue;
       }
 
       foreach ( Type implementedInterface in injectedType.ImplementedInterfaces ) {
-        services.Add(new ServiceDescriptor(implementedInterface, injectedType, attributeData.ServiceLifetime));
+        services.Add(CreateDescriptor(implementedInterface, injectedType, attributeData));
       }
     }
+  }
+
+  private static ServiceDescriptor CreateDescriptorFromAttribute(InjectAttribute attribute, Type injectedType) =>
+    CreateDescriptor(attribute.ProvideFor!, injectedType, attribute);
+
+  private static ServiceDescriptor CreateDescriptor(
+    Type implementedInterface,
+    Type injectedType,
+    InjectAttribute attribute
+  ) {
+    Func<IServiceProvider, object>? factoryFunction = GetFactoryFunction(injectedType, attribute.FactoryFunctionName);
+
+    return factoryFunction != null
+      ? new ServiceDescriptor(implementedInterface, factoryFunction, attribute.ServiceLifetime)
+      : new ServiceDescriptor(implementedInterface, injectedType, attribute.ServiceLifetime);
+  }
+
+  private static Func<IServiceProvider, object>? GetFactoryFunction(Type injectedType, string? factoryName) {
+    if ( string.IsNullOrWhiteSpace(factoryName) ) {
+      return null;
+    }
+
+    MethodInfo? methodInfo = injectedType.GetMethod(factoryName);
+
+    return methodInfo?.ReturnType == typeof(object) ? _ => methodInfo.Invoke(null, null)! : null;
   }
 }

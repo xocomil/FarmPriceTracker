@@ -8,17 +8,19 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="MaterialDesignThemes" Version="4.4.0-ci16-ci16" />
-        <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
-        <PackageReference Include="ReactiveUI.Events.WPF" Version="15.1.1" />
-        <PackageReference Include="ReactiveUI.WPF" Version="17.1.9" />
-        <PackageReference Include="ShowMeTheXAML.MSBuild" Version="2.0.0" />
-        <PackageReference Include="Splat.Microsoft.Extensions.DependencyInjection" Version="14.1.1" />
+        <PackageReference Include="MaterialDesignThemes" Version="4.4.0-ci16-ci16"/>
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0"/>
+        <PackageReference Include="ReactiveUI.Events.WPF" Version="15.1.1"/>
+        <PackageReference Include="ReactiveUI.Validation" Version="2.2.1"/>
+        <PackageReference Include="ReactiveUI.WPF" Version="17.1.9"/>
+        <PackageReference Include="ShowMeTheXAML.MSBuild" Version="2.0.0"/>
+        <PackageReference Include="Splat.Microsoft.Extensions.DependencyInjection" Version="14.1.1"/>
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\AssemblyScanning\AssemblyScanning.csproj" />
-        <ProjectReference Include="..\FarmSimulator22Integrations\FarmSimulator22Integrations.csproj" />
+        <ProjectReference Include="..\AssemblyScanning\AssemblyScanning.csproj"/>
+        <ProjectReference Include="..\FarmSimulator22Integrations\FarmSimulator22Integrations.csproj"/>
+        <ProjectReference Include="..\GameLibrary\GameLibrary.csproj"/>
     </ItemGroup>
 
 </Project>
