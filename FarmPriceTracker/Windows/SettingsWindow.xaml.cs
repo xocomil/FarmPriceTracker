@@ -16,6 +16,10 @@ public partial class SettingsWindow {
     this.WhenActivated(
       disposableRegistrations => {
         this.BindCommand(ViewModel, vm => vm.CloseSettings, view => view.CloseBtn).DisposeWith(disposableRegistrations);
+        this.BindCommand(ViewModel, vm => vm.BrowseForDataFolder, view => view.BrowseBtn)
+          .DisposeWith(disposableRegistrations);
+        this.BindCommand(ViewModel, vm => vm.GetFs22Location, view => view.Fs22LocationBtn)
+          .DisposeWith(disposableRegistrations);
 
         this.Bind(ViewModel, vm => vm.DataFolder, view => view.DataFolder.Text).DisposeWith(disposableRegistrations);
 

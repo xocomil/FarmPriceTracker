@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using AssemblyScanning;
+using GameLibrary;
 using Microsoft.Extensions.DependencyInjection;
 using ReactiveUI;
 using Splat;
@@ -11,10 +12,8 @@ namespace FarmPriceTracker;
 ///   Interaction logic for App.xaml
 /// </summary>
 public partial class App {
-  private readonly ServiceProvider _serviceProvider;
-
   public App() {
-    _serviceProvider = InitializeSplat();
+    InitializeSplat();
   }
 
   private static ServiceProvider InitializeSplat() {
@@ -38,6 +37,7 @@ public partial class App {
   }
 
   private static void ConfigureServices(IServiceCollection services) {
+    DependencyInjection.AddDependencies(services);
     services.RegisterServicesFromType<IAssemblyScanningMarker>();
   }
 

@@ -20,6 +20,7 @@
     <ItemGroup>
         <ProjectReference Include="..\AssemblyScanning\AssemblyScanning.csproj" />
         <ProjectReference Include="..\FarmSimulator22Integrations\FarmSimulator22Integrations.csproj" />
+        <ProjectReference Include="..\GameLibrary\GameLibrary.csproj" />
     </ItemGroup>
 
 </Project>

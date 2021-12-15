@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reactive;
@@ -9,6 +8,9 @@ using System.Windows;
 using System.Windows.Forms;
 using AssemblyScanning;
 using FarmPriceTracker.Windows;
+using FarmPriceTracker.WinFormsCompat;
+using GameLibrary;
+using GameLibrary.Models;
 using Microsoft.Extensions.DependencyInjection;
 using ReactiveUI;
 using ReactiveUI.Validation.Contexts;
@@ -33,16 +35,11 @@ public class SettingsViewModel : ReactiveValidationObject {
     this.ValidationRule(vm => vm.DataFolder, Directory.Exists, "The data folder does not exist.");
 
     _dataFolderValid = this.IsValid()
-      // .ObserveOn(RxApp.MainThreadScheduler)
-      .Do(model => Trace.WriteLine($"valid: {model}"))
-      // .Where(valid => !valid)
       .Select(valid => !valid && (GetErrors(nameof(DataFolder)) as IEnumerable<string>).Any())
-      .Do(model => Trace.WriteLine($"after select: {model}"))
       .ToProperty(this, x => x.DataFolderValid, scheduler: RxApp.MainThreadScheduler);
 
     BrowseForDataFolder = ReactiveCommand.Create<Window>(OpenFileDialogForDataFolder);
-
-    this.WhenAnyValue(x => x.DataFolderValid).Subscribe(valid => Trace.WriteLine($"whenanyvalue valid: {valid}"));
+    GetFs22Location = ReactiveCommand.Create(FindFs22Location);
   }
 
   public bool DataFolderValid => _dataFolderValid.Value;
@@ -54,17 +51,32 @@ public class SettingsViewModel : ReactiveValidationObject {
 
   public ReactiveCommand<Window, Unit> CloseSettings { get; } = ReactiveCommand.Create<Window>(CloseSettingsWindow);
   public ReactiveCommand<Window, Unit> BrowseForDataFolder { get; }
+  public ReactiveCommand<Unit, Unit> GetFs22Location { get; }
 
   public ValidationContext ValidationContext { get; } = new();
 
+  private void FindFs22Location() {
+    var steamHelper = Locator.Current.GetService<SteamHelper>();
+
+    SteamFindResult result = steamHelper.SteamInstallLocation(SteamHelper.FarmingSimulator22SteamId);
+
+    if ( result.Found ) {
+      DataFolder = Path.Combine(result.GameLocation, "data");
+    }
+
+    var mainWindowViewModel = Locator.Current.GetService<MainViewModel>();
+
+    using IDisposable tmp = mainWindowViewModel.ShowErrorMessage
+      .Execute(result.ErrorMessage ?? "Success, but we shouldn't see this...")
+      .Subscribe();
+  }
+
   private void OpenFileDialogForDataFolder(Window parent) {
-    var dialog = new FolderBrowserDialog();
+    var dialog = new FolderBrowserDialog {
+      InitialDirectory = DataFolder, Description = "Location of Data Folder", UseDescriptionForTitle = true
+    };
 
-    dialog.InitialDirectory = DataFolder;
-    dialog.Description = "Location of Data Folder";
-    dialog.UseDescriptionForTitle = true;
-
-    if ( dialog.ShowDialog() == DialogResult.OK ) {
+    if ( dialog.ShowDialog(parent.GetIWin32Window()) == DialogResult.OK ) {
       DataFolder = dialog.SelectedPath;
     }
   }
