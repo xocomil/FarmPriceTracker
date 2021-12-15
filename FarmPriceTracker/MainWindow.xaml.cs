@@ -21,7 +21,7 @@ public partial class MainWindow {
 
     this.WhenActivated(
       disposableRegistrations => {
-        this.OneWayBind(ViewModel, vm => vm.ErrorMessageQueue, view => view.ErrorSnackbar.MessageQueue)
+        this.OneWayBind(ViewModel, vm => vm.ErrorMessageQueue, view => view.ErrorSnackbar!.MessageQueue)
           .DisposeWith(disposableRegistrations);
       }
     );

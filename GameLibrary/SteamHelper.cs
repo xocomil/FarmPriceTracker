@@ -7,9 +7,8 @@ namespace GameLibrary;
 
 [Inject(serviceLifetime: ServiceLifetime.Transient, provideFor: typeof(SteamHelper))]
 public class SteamHelper {
-  private readonly SteamHandler _steamHandler;
-
   private readonly Dictionary<int, string> _games = new() { { FarmingSimulator22SteamId, "Farming Simulator 22" } };
+  private readonly SteamHandler _steamHandler;
 
   public SteamHelper(SteamHandler steamHandler) {
     _steamHandler = steamHandler;
@@ -31,10 +30,10 @@ public class SteamHelper {
       return errorResult with { ErrorMessage = "Could not find any Steam games." };
     }
 
-    SteamGame? game = _steamHandler.GetByID(steamId);
+    _steamHandler.TryGetByID(steamId, out SteamGame? game);
 
     return game == null
-      ? errorResult with {  ErrorMessage = $"Could not find {_games[steamId]} in the Steam library!" }
+      ? errorResult with { ErrorMessage = $"Could not find {_games[steamId]} in the Steam library!" }
       : new SteamFindResult { Found = true, GameLocation = game.Path };
   }
 }

@@ -35,7 +35,7 @@ public class SettingsViewModel : ReactiveValidationObject {
     this.ValidationRule(vm => vm.DataFolder, Directory.Exists, "The data folder does not exist.");
 
     _dataFolderValid = this.IsValid()
-      .Select(valid => !valid && (GetErrors(nameof(DataFolder)) as IEnumerable<string>).Any())
+      .Select(valid => !valid && (GetErrors(nameof(DataFolder)) as IEnumerable<string> ?? Array.Empty<string>()).Any())
       .ToProperty(this, x => x.DataFolderValid, scheduler: RxApp.MainThreadScheduler);
 
     BrowseForDataFolder = ReactiveCommand.Create<Window>(OpenFileDialogForDataFolder);
@@ -53,21 +53,22 @@ public class SettingsViewModel : ReactiveValidationObject {
   public ReactiveCommand<Window, Unit> BrowseForDataFolder { get; }
   public ReactiveCommand<Unit, Unit> GetFs22Location { get; }
 
-  public ValidationContext ValidationContext { get; } = new();
+  public new ValidationContext ValidationContext { get; } = new();
 
   private void FindFs22Location() {
     var steamHelper = Locator.Current.GetService<SteamHelper>();
 
-    SteamFindResult result = steamHelper.SteamInstallLocation(SteamHelper.FarmingSimulator22SteamId);
+    SteamFindResult? result = steamHelper?.SteamInstallLocation(SteamHelper.FarmingSimulator22SteamId);
 
-    if ( result.Found ) {
+    if ( result is { Found: true, GameLocation: { } } ) {
       DataFolder = Path.Combine(result.GameLocation, "data");
     }
 
     var mainWindowViewModel = Locator.Current.GetService<MainViewModel>();
 
-    using IDisposable tmp = mainWindowViewModel.ShowErrorMessage
-      .Execute(result.ErrorMessage ?? "Success, but we shouldn't see this...")
+    using IDisposable? tmp = mainWindowViewModel?.ShowErrorMessage.Execute(
+        result?.ErrorMessage ?? "Something went wrong while trying to get the FS22 install location."
+      )
       .Subscribe();
   }
 
@@ -77,7 +78,7 @@ public class SettingsViewModel : ReactiveValidationObject {
     };
 
     if ( dialog.ShowDialog(parent.GetIWin32Window()) == DialogResult.OK ) {
-      DataFolder = dialog.SelectedPath;
+      DataFolder = dialog.SelectedPath ?? string.Empty;
     }
   }
 

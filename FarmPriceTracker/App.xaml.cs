@@ -16,7 +16,7 @@ public partial class App {
     InitializeSplat();
   }
 
-  private static ServiceProvider InitializeSplat() {
+  private static void InitializeSplat() {
     var services = new ServiceCollection();
 
     services.UseMicrosoftDependencyResolver();
@@ -32,8 +32,6 @@ public partial class App {
     ServiceProvider serviceProvider = services.BuildServiceProvider();
 
     serviceProvider.UseMicrosoftDependencyResolver();
-
-    return serviceProvider;
   }
 
   private static void ConfigureServices(IServiceCollection services) {

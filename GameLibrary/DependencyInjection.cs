@@ -1,5 +1,4 @@
-﻿using System.ComponentModel.Design;
-using AssemblyScanning;
+﻿using AssemblyScanning;
 using GameFinder.StoreHandlers.Steam;
 using Microsoft.Extensions.DependencyInjection;
 

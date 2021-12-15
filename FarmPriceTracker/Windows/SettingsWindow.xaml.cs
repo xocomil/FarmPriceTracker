@@ -21,14 +21,14 @@ public partial class SettingsWindow {
         this.BindCommand(ViewModel, vm => vm.GetFs22Location, view => view.Fs22LocationBtn)
           .DisposeWith(disposableRegistrations);
 
-        this.Bind(ViewModel, vm => vm.DataFolder, view => view.DataFolder.Text).DisposeWith(disposableRegistrations);
+        this.Bind(ViewModel, vm => vm.DataFolder, view => view.DataFolder!.Text).DisposeWith(disposableRegistrations);
 
-        this.WhenAnyValue(x => x.ViewModel.DataFolderValid)
+        this.WhenAnyValue(x => x.ViewModel!.DataFolderValid)
           .Select(valid => !valid)
-          .BindTo(this, x => x.ValidFolder.Visibility)
+          .BindTo(this, x => x.ValidFolder!.Visibility)
           .DisposeWith(disposableRegistrations);
 
-        this.OneWayBind(ViewModel, vm => vm.DataFolderValid, view => view.FolderCog.Visibility)
+        this.OneWayBind(ViewModel, vm => vm.DataFolderValid, view => view.FolderCog!.Visibility)
           .DisposeWith(disposableRegistrations);
       }
     );
