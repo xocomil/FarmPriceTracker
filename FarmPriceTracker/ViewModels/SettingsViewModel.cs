@@ -4,6 +4,8 @@ using System.IO;
 using System.Linq;
 using System.Reactive;
 using System.Reactive.Linq;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Windows;
 using System.Windows.Forms;
 using AssemblyScanning;
@@ -20,11 +22,22 @@ using Splat;
 
 namespace FarmPriceTracker.ViewModels;
 
-[Inject(serviceLifetime: ServiceLifetime.Singleton, provideFor: typeof(SettingsViewModel))]
+[Inject(
+  serviceLifetime: ServiceLifetime.Singleton,
+  provideFor: typeof(SettingsViewModel),
+  factoryFunctionName: nameof(CreateInstance)
+)]
+[Serializable]
 public class SettingsViewModel : ReactiveValidationObject {
+  private static readonly string settingsFilePath = Path.Combine(
+    Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),
+    "/Games/.FarmPriceTracker/settings.json"
+  );
+
   private readonly ObservableAsPropertyHelper<bool> _dataFolderValid;
   private string _dataFolder = @"c:\test\test\test";
 
+  [JsonConstructor]
   public SettingsViewModel() {
     this.ValidationRule(
       vm => vm.DataFolder,
@@ -39,6 +52,7 @@ public class SettingsViewModel : ReactiveValidationObject {
       .ToProperty(this, x => x.DataFolderValid, scheduler: RxApp.MainThreadScheduler);
 
     BrowseForDataFolder = ReactiveCommand.Create<Window>(OpenFileDialogForDataFolder);
+    CloseSettings = ReactiveCommand.Create<Window>(CloseSettingsWindow);
     GetFs22Location = ReactiveCommand.Create(FindFs22Location);
   }
 
@@ -49,7 +63,7 @@ public class SettingsViewModel : ReactiveValidationObject {
     set => this.RaiseAndSetIfChanged(ref _dataFolder, value);
   }
 
-  public ReactiveCommand<Window, Unit> CloseSettings { get; } = ReactiveCommand.Create<Window>(CloseSettingsWindow);
+  public ReactiveCommand<Window, Unit> CloseSettings { get; }
   public ReactiveCommand<Window, Unit> BrowseForDataFolder { get; }
   public ReactiveCommand<Unit, Unit> GetFs22Location { get; }
 
@@ -62,6 +76,8 @@ public class SettingsViewModel : ReactiveValidationObject {
 
     if ( result is { Found: true, GameLocation: { } } ) {
       DataFolder = Path.Combine(result.GameLocation, "data");
+
+      return;
     }
 
     var mainWindowViewModel = Locator.Current.GetService<MainViewModel>();
@@ -82,13 +98,39 @@ public class SettingsViewModel : ReactiveValidationObject {
     }
   }
 
-  private static void CloseSettingsWindow(Window window) {
+  private void CloseSettingsWindow(Window window) {
     window.Close();
+    SaveSettingsFile();
   }
 
   public static void OpenSettings() {
     var settingsWindow = Locator.Current.GetService<SettingsWindow>();
 
     settingsWindow?.ShowDialog();
+  }
+
+  private void SaveSettingsFile() {
+    string? settingsDirectory = Path.GetDirectoryName(settingsFilePath);
+
+    if ( !Directory.Exists(settingsDirectory) ) {
+      Directory.CreateDirectory(settingsDirectory);
+    }
+
+    File.WriteAllTextAsync(settingsFilePath, JsonSerializer.Serialize(this));
+  }
+
+  private static SettingsViewModel? LoadSettingsFile() {
+    if ( !File.Exists(settingsFilePath) ) {
+      return null;
+    }
+
+    string json = File.ReadAllText(settingsFilePath);
+    return JsonSerializer.Deserialize<SettingsViewModel>(json);
+  }
+
+  public static SettingsViewModel CreateInstance() {
+    SettingsViewModel? settingsFromFile = LoadSettingsFile();
+
+    return settingsFromFile ?? new SettingsViewModel();
   }
 }
