@@ -29,7 +29,7 @@ namespace FarmPriceTracker.ViewModels;
 )]
 [Serializable]
 public class SettingsViewModel : ReactiveValidationObject {
-  private static readonly string settingsFilePath = Path.Combine(
+  private static readonly string SettingsFilePath = Path.Combine(
     Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),
     "/Games/.FarmPriceTracker/settings.json"
   );
@@ -110,21 +110,21 @@ public class SettingsViewModel : ReactiveValidationObject {
   }
 
   private void SaveSettingsFile() {
-    string? settingsDirectory = Path.GetDirectoryName(settingsFilePath);
+    string settingsDirectory = Path.GetDirectoryName(SettingsFilePath)!;
 
     if ( !Directory.Exists(settingsDirectory) ) {
       Directory.CreateDirectory(settingsDirectory);
     }
 
-    File.WriteAllTextAsync(settingsFilePath, JsonSerializer.Serialize(this));
+    File.WriteAllTextAsync(SettingsFilePath, JsonSerializer.Serialize(this));
   }
 
   private static SettingsViewModel? LoadSettingsFile() {
-    if ( !File.Exists(settingsFilePath) ) {
+    if ( !File.Exists(SettingsFilePath) ) {
       return null;
     }
 
-    string json = File.ReadAllText(settingsFilePath);
+    string json = File.ReadAllText(SettingsFilePath);
     return JsonSerializer.Deserialize<SettingsViewModel>(json);
   }
 

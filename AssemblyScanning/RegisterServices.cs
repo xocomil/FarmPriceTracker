@@ -52,7 +52,7 @@ public static class RegisterServices {
   }
 
   private static ServiceDescriptor CreateDescriptorFromAttribute(InjectAttribute attribute, Type injectedType) =>
-    CreateDescriptor(attribute.ProvideFor, injectedType, attribute);
+    CreateDescriptor(attribute.ProvideFor!, injectedType, attribute);
 
   private static ServiceDescriptor CreateDescriptor(
     Type implementedInterface,
@@ -71,6 +71,8 @@ public static class RegisterServices {
       return null;
     }
 
-    return sp => injectedType.GetMethod(factoryName).Invoke(null, null);
+    MethodInfo? methodInfo = injectedType.GetMethod(factoryName);
+
+    return methodInfo?.ReturnType == typeof(object) ? _ => methodInfo.Invoke(null, null)! : null;
   }
 }
