@@ -24,12 +24,12 @@ public partial class MainWindow {
         this.OneWayBind(ViewModel, vm => vm.ErrorMessageQueue, view => view.ErrorSnackbar!.MessageQueue)
           .DisposeWith(disposableRegistrations);
 
-        this.OneWayBind(ViewModel, vm => vm.FillTypesEmpty, view => view.DrawerHost.IsTopDrawerOpen)
+        this.OneWayBind(ViewModel, vm => vm.FillTypesEmpty, view => view.DrawerHost!.IsTopDrawerOpen)
           .DisposeWith(disposableRegistrations);
 
         ViewModel.WhenAnyValue(vm => vm.FillTypes)
           .Select(fillTypes => fillTypes?.Count ?? 0)
-          .BindTo(this, view => view.FillTypesBadge.Badge)
+          .BindTo(this, view => view.FillTypesBadge!.Badge)
           .DisposeWith(disposableRegistrations);
       }
     );
@@ -37,9 +37,5 @@ public partial class MainWindow {
     var test = Fs22Map.CreateInstance();
 
     Console.WriteLine($"map: {JsonSerializer.Serialize(test.Map)}");
-  }
-
-  private void MissingFillTypes() {
-    DrawerHost.IsTopDrawerOpen = true;
   }
 }

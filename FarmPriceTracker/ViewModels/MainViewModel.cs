@@ -13,10 +13,10 @@ namespace FarmPriceTracker.ViewModels;
 
 [Inject(serviceLifetime: ServiceLifetime.Singleton, provideFor: typeof(MainViewModel))]
 public class MainViewModel : ReactiveObject {
+  private readonly ObservableAsPropertyHelper<bool> _fillTypesEmpty;
   public readonly SnackbarMessageQueue ErrorMessageQueue = new();
 
-  private Collection<IFillTypePriceData> _fillTypes;
-  private readonly ObservableAsPropertyHelper<bool> _fillTypesEmpty;
+  private Collection<IFillTypePriceData>? _fillTypes;
 
   public MainViewModel(SettingsViewModel settingsViewModel) {
     SettingsViewModel = settingsViewModel;
@@ -30,7 +30,7 @@ public class MainViewModel : ReactiveObject {
 
   public bool FillTypesEmpty => _fillTypesEmpty.Value;
 
-  public Collection<IFillTypePriceData> FillTypes {
+  public Collection<IFillTypePriceData>? FillTypes {
     get => _fillTypes;
     set => this.RaiseAndSetIfChanged(ref _fillTypes, value);
   }
