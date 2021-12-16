@@ -9,7 +9,6 @@ using System.Text.Json.Serialization;
 using System.Windows;
 using System.Windows.Forms;
 using AssemblyScanning;
-using FarmPriceTracker.Windows;
 using FarmPriceTracker.WinFormsCompat;
 using GameLibrary;
 using GameLibrary.Models;
@@ -101,12 +100,6 @@ public class SettingsViewModel : ReactiveValidationObject {
   private void CloseSettingsWindow(Window window) {
     window.Close();
     SaveSettingsFile();
-  }
-
-  public static void OpenSettings() {
-    var settingsWindow = Locator.Current.GetService<SettingsWindow>();
-
-    settingsWindow?.ShowDialog();
   }
 
   private void SaveSettingsFile() {

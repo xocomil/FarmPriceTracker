@@ -21,17 +21,11 @@ public class MainViewModel : ReactiveObject {
     () => { Application.Current?.Shutdown(); }
   );
 
-  public ReactiveCommand<Unit, Unit> OpenSettings { get; } = ReactiveCommand.Create(OpenSettingsWindow);
-
   public ReactiveCommand<string, Unit> ShowErrorMessage { get; }
 
   public SettingsViewModel SettingsViewModel { get; }
 
   private void EnqueueError(string message) {
     ErrorMessageQueue.Enqueue(message);
-  }
-
-  private static void OpenSettingsWindow() {
-    SettingsViewModel.OpenSettings();
   }
 }
