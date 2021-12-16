@@ -73,6 +73,6 @@ public static class RegisterServices {
 
     MethodInfo? methodInfo = injectedType.GetMethod(factoryName);
 
-    return methodInfo?.ReturnType == typeof(object) ? _ => methodInfo.Invoke(null, null)! : null;
+    return methodInfo?.ReturnType is not null ? _ => methodInfo.Invoke(null, null)! : null;
   }
 }
