@@ -1,12 +1,12 @@
 ﻿using System;
-using System.Collections.ObjectModel;
+using System.Collections.Generic;
 using System.Linq;
 using System.Reactive;
 using System.Reactive.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using AssemblyScanning;
-using DataTypes.Interfaces;
+using FarmSimulator22Integrations.Models;
 using FarmSimulator22Integrations.Parsers;
 using MaterialDesignThemes.Wpf;
 using Microsoft.Extensions.DependencyInjection;
@@ -19,7 +19,7 @@ public class MainViewModel : ReactiveObject {
   private readonly ObservableAsPropertyHelper<bool> _fillTypesEmpty;
   public readonly SnackbarMessageQueue ErrorMessageQueue = new();
 
-  private Collection<IFillTypePriceData>? _fillTypes;
+  private List<Fs22FillTypePriceData> _fillTypes;
 
   public MainViewModel(SettingsViewModel settingsViewModel) {
     SettingsViewModel = settingsViewModel;
@@ -36,7 +36,7 @@ public class MainViewModel : ReactiveObject {
 
   public bool FillTypesEmpty => _fillTypesEmpty.Value;
 
-  public Collection<IFillTypePriceData>? FillTypes {
+  public List<Fs22FillTypePriceData> FillTypes {
     get => _fillTypes;
     set => this.RaiseAndSetIfChanged(ref _fillTypes, value);
   }
@@ -54,7 +54,7 @@ public class MainViewModel : ReactiveObject {
   public SettingsViewModel SettingsViewModel { get; }
 
   private void FixButtonCommandHandler(TabControl tabControl) {
-    tabControl.Dispatcher.BeginInvoke(() => tabControl.SelectedIndex = 1);
+    tabControl.Dispatcher?.BeginInvoke(() => tabControl.SelectedIndex = 1);
 
     using IDisposable sub = SettingsViewModel.FocusDataFolder.Execute().Subscribe();
   }
@@ -62,7 +62,7 @@ public class MainViewModel : ReactiveObject {
   private void LoadFillTypesFromData() {
     var map = Fs22Map.CreateInstance(SettingsViewModel.DataFolder);
 
-    _fillTypes = map?.FillTypes;
+    FillTypes = map.FillTypes;
   }
 
   private void EnqueueError(string message) {

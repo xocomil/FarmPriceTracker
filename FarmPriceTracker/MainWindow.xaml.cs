@@ -35,7 +35,7 @@ public partial class MainWindow {
           .BindTo(this, view => view.FillTypesBadge!.Badge)
           .DisposeWith(disposableRegistrations);
 
-        ViewModel.SettingsViewModel.WhenAnyValue(vm => vm.DataFolder)
+        ViewModel!.SettingsViewModel.WhenAnyValue(vm => vm.DataFolder)
           .Select(_ => Unit.Default)
           .InvokeCommand(ViewModel.LoadFillTypes)
           .DisposeWith(disposableRegistrations);

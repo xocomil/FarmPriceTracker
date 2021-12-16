@@ -1,6 +1,4 @@
-﻿using System.Collections.ObjectModel;
-using System.Xml.Serialization;
-using DataTypes.Interfaces;
+﻿using System.Xml.Serialization;
 using FarmSimulator22Integrations.Models;
 
 namespace FarmSimulator22Integrations.Parsers;
@@ -14,9 +12,9 @@ public class Fs22Map {
 
   private Map? Map { get; }
 
-  public Collection<IFillTypePriceData>? FillTypes =>
-    (Map?.FillTypes.Select(Fs22FillTypePriceData.CreateFs22FillTypePriceDataFromMap) ??
-     Enumerable.Empty<IFillTypePriceData>()) as Collection<IFillTypePriceData>;
+  public List<Fs22FillTypePriceData> FillTypes =>
+    Map?.FillTypes?.Select(Fs22FillTypePriceData.CreateFs22FillTypePriceDataFromMap).ToList() ??
+    new List<Fs22FillTypePriceData>();
 
   public static Fs22Map CreateInstance(string dataDirectoryPath) {
     string fileLocation = Path.Combine(dataDirectoryPath, MapsFillTypesXmlLocation);
@@ -29,7 +27,7 @@ public class Fs22Map {
 
     using Stream reader = new FileStream(fileLocation, FileMode.Open);
 
-    Map? map = serializer.Deserialize(reader) as Map ?? throw new InvalidOperationException();
+    Map map = serializer.Deserialize(reader) as Map ?? throw new InvalidOperationException();
 
     return new Fs22Map(map);
   }

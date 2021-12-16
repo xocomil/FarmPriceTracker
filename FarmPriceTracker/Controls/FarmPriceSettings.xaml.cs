@@ -30,11 +30,11 @@ public partial class FarmPriceSettings {
         this.OneWayBind(ViewModel, vm => vm.DataFolderValid, view => view.FolderCog!.Visibility)
           .DisposeWith(disposableRegistrations);
 
-        this.WhenAnyObservable(x => x.ViewModel.FocusDataFolder)
+        this.WhenAnyObservable(x => x.ViewModel!.FocusDataFolder)
           .Subscribe(
             _ => {
-              DataFolder.Focus();
-              DataFolder.SelectAll();
+              DataFolder?.Focus();
+              DataFolder?.SelectAll();
             }
           )
           .DisposeWith(disposableRegistrations);
