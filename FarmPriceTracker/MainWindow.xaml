@@ -3,10 +3,10 @@
                            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                            xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-                           xmlns:controls="clr-namespace:FarmPriceTracker.Controls"
                            xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
                            xmlns:reactiveUi="http://reactiveui.net"
                            xmlns:viewModels="clr-namespace:FarmPriceTracker.ViewModels"
+                           xmlns:controls="clr-namespace:FarmPriceTracker.Controls"
                            mc:Ignorable="d"
                            TextElement.Foreground="{DynamicResource MaterialDesignBody}"
                            Background="{DynamicResource MaterialDesignPaper}"
@@ -16,14 +16,55 @@
                            Title="Farm Price Tracker - Main" Height="600" Width="800" Padding="1">
     <Grid>
         <DockPanel>
-            <controls:Header DockPanel.Dock="Top" />
-            <StatusBar DockPanel.Dock="Bottom" Height="35" />
-            <Grid>
-                <TabControl>
-                    <TabItem Header="Fill Types" />
-                    <TabItem Header="Settings" />
-                </TabControl>
-            </Grid>
+            <TabControl
+                Style="{StaticResource MaterialDesignNavigatilRailTabControl}"
+                TabStripPlacement="Left"
+                materialDesign:ColorZoneAssist.Mode="PrimaryMid"
+                SnapsToDevicePixels="True">
+                <TabItem>
+                    <TabItem.Header>
+                        <StackPanel
+                            Height="auto"
+                            Width="auto">
+                            <materialDesign:PackIcon
+                                Kind="Barley"
+                                Width="24"
+                                Height="24"
+                                HorizontalAlignment="Center" />
+                            <TextBlock
+                                Text="Fill Types"
+                                HorizontalAlignment="Center" />
+                        </StackPanel>
+                    </TabItem.Header>
+                    <TextBlock>
+                        <Run
+                            Text="tab 1 content. Default look and behaviors." />
+                        <LineBreak />
+                        <LineBreak />
+                        <Run
+                            FontStyle="Italic">
+                            Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...
+                        </Run>
+                    </TextBlock>
+                </TabItem>
+                <TabItem>
+                    <TabItem.Header>
+                        <StackPanel
+                            Height="auto"
+                            Width="auto">
+                            <materialDesign:PackIcon
+                                Kind="Cog"
+                                Width="24"
+                                Height="24"
+                                HorizontalAlignment="Center" />
+                            <TextBlock
+                                Text="Settings"
+                                HorizontalAlignment="Center" />
+                        </StackPanel>
+                    </TabItem.Header>
+                    <controls:FarmPriceSettings Margin="10" />
+                </TabItem>
+            </TabControl>
         </DockPanel>
         <materialDesign:Snackbar x:Name="ErrorSnackbar" />
     </Grid>

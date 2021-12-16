@@ -1,21 +1,19 @@
 ﻿using System.Reactive.Disposables;
 using System.Reactive.Linq;
-using AssemblyScanning;
 using FarmPriceTracker.ViewModels;
 using ReactiveUI;
 using Splat;
 
-namespace FarmPriceTracker.Windows;
+namespace FarmPriceTracker.Controls;
 
-[Inject(typeof(SettingsWindow))]
-public partial class SettingsWindow {
-  public SettingsWindow() {
+public partial class FarmPriceSettings {
+  public FarmPriceSettings() {
     InitializeComponent();
     ViewModel = Locator.Current.GetService<SettingsViewModel>();
 
     this.WhenActivated(
       disposableRegistrations => {
-        this.BindCommand(ViewModel, vm => vm.CloseSettings, view => view.CloseBtn).DisposeWith(disposableRegistrations);
+        this.BindCommand(ViewModel, vm => vm.SaveSettings, view => view.SaveBtn).DisposeWith(disposableRegistrations);
         this.BindCommand(ViewModel, vm => vm.BrowseForDataFolder, view => view.BrowseBtn)
           .DisposeWith(disposableRegistrations);
         this.BindCommand(ViewModel, vm => vm.GetFs22Location, view => view.Fs22LocationBtn)
