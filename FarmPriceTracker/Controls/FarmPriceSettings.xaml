@@ -1,16 +1,31 @@
-﻿<reactiveUi:ReactiveWindow x:Class="FarmPriceTracker.Windows.SettingsWindow"
-                           x:TypeArguments="viewModels:SettingsViewModel"
-                           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-                           xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-                           xmlns:reactiveUi="http://reactiveui.net"
-                           xmlns:viewModels="clr-namespace:FarmPriceTracker.ViewModels"
-                           xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-                           mc:Ignorable="d"
-                           x:Name="ThisWindow"
-                           Title="SettingsWindow" Height="450" Width="800" Padding="5">
-    <Window.Resources>
+﻿<!--
+<reactiveUi:ReactiveUserControl x:TypeArguments="viewModels:MainViewModel" x:Class="FarmPriceTracker.Controls.Header"
+                                xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                                xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                                xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                                xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+                                xmlns:reactiveUi="http://reactiveui.net"
+                                xmlns:viewModels="clr-namespace:FarmPriceTracker.ViewModels"
+                                mc:Ignorable="d"
+                                d:DesignHeight="40" d:DesignWidth="600"
+                                Height="40"
+                                Padding="2">
+-->
+
+<reactiveUi:ReactiveUserControl x:Class="FarmPriceTracker.Controls.Settings"
+                                x:TypeArguments="viewModels:SettingsViewModel"
+                                xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                                xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                                xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                                xmlns:reactiveUi="http://reactiveui.net"
+                                xmlns:viewModels="clr-namespace:FarmPriceTracker.ViewModels"
+                                xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+                                mc:Ignorable="d"
+                                x:Name="ThisWindow"
+                                Padding="5">
+    <Control.Resources>
         <Style TargetType="{x:Type materialDesign:PackIcon}"
                BasedOn="{StaticResource {x:Type materialDesign:PackIcon}}">
             <Setter Property="VerticalAlignment" Value="Center" />
@@ -20,7 +35,7 @@
             <Setter Property="Margin" Value="0,8" />
             <Setter Property="VerticalAlignment" Value="Center" />
         </Style>
-    </Window.Resources>
+    </Control.Resources>
     <Grid>
         <DockPanel>
             <StackPanel Height="40" DockPanel.Dock="Bottom" Orientation="Horizontal" HorizontalAlignment="Right">
@@ -59,4 +74,4 @@
             </StackPanel>
         </DockPanel>
     </Grid>
-</reactiveUi:ReactiveWindow>
+</reactiveUi:ReactiveUserControl>

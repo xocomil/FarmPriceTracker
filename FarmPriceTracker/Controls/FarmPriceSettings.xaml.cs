@@ -1,15 +1,12 @@
-﻿using System.Reactive.Disposables;
-using System.Reactive.Linq;
-using AssemblyScanning;
+﻿using System;
+using System.Reactive.Disposables;
 using FarmPriceTracker.ViewModels;
-using ReactiveUI;
 using Splat;
 
 namespace FarmPriceTracker.Windows;
 
-[Inject(typeof(SettingsWindow))]
-public partial class SettingsWindow {
-  public SettingsWindow() {
+public class Settings {
+  public Settings() {
     InitializeComponent();
     ViewModel = Locator.Current.GetService<SettingsViewModel>();
 
@@ -23,10 +20,12 @@ public partial class SettingsWindow {
 
         this.Bind(ViewModel, vm => vm.DataFolder, view => view.DataFolder!.Text).DisposeWith(disposableRegistrations);
 
-        this.WhenAnyValue(x => x.ViewModel!.DataFolderValid)
-          .Select(valid => !valid)
-          .BindTo(this, x => x.ValidFolder!.Visibility)
-          .DisposeWith(disposableRegistrations);
+        DisposableMixins.DisposeWith<IDisposable>(
+          this.WhenAnyValue(x => x.ViewModel!.DataFolderValid)
+            .Select(valid => !valid)
+            .BindTo(this, x => x.ValidFolder!.Visibility),
+          disposableRegistrations
+        );
 
         this.OneWayBind(ViewModel, vm => vm.DataFolderValid, view => view.FolderCog!.Visibility)
           .DisposeWith(disposableRegistrations);
