@@ -26,26 +26,109 @@
                         <StackPanel
                             Height="auto"
                             Width="auto">
-                            <materialDesign:PackIcon
-                                Kind="Barley"
-                                Width="24"
-                                Height="24"
-                                HorizontalAlignment="Center" />
+                            <materialDesign:Badged x:Name="FillTypesBadge" Badge="0" BadgeColorZoneMode="PrimaryDark"
+                                                   HorizontalAlignment="Center">
+                                <materialDesign:PackIcon
+                                    Kind="Barley"
+                                    Width="24"
+                                    Height="24" />
+                            </materialDesign:Badged>
                             <TextBlock
                                 Text="Fill Types"
                                 HorizontalAlignment="Center" />
                         </StackPanel>
                     </TabItem.Header>
-                    <TextBlock>
-                        <Run
-                            Text="tab 1 content. Default look and behaviors." />
-                        <LineBreak />
-                        <LineBreak />
-                        <Run
-                            FontStyle="Italic">
-                            Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...
-                        </Run>
-                    </TextBlock>
+                    <materialDesign:DrawerHost
+                        x:Name="DrawerHost"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch"
+                        TopDrawerCloseOnClickAway="False"
+                        OverlayBackground="{DynamicResource PrimaryHueMidBrush}">
+                        <materialDesign:DrawerHost.TopDrawerContent>
+                            <Grid
+                                Margin="16"
+                                HorizontalAlignment="Center">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="auto" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto" />
+                                </Grid.RowDefinitions>
+                                <materialDesign:PackIcon Grid.Column="0" Kind="AlertCircleOutline" Margin="4"
+                                                         HorizontalAlignment="Center"
+                                                         VerticalAlignment="Center"
+                                                         Height="24"
+                                                         Width="24" />
+                                <TextBlock Grid.Column="1"
+                                           Margin="4"
+                                           VerticalAlignment="Center"
+                                           TextWrapping="Wrap">
+                                    No fill types are available. This is most likely because you have not chosen the proper data folder. Make sure to choose the data folder from your install directory.
+                                </TextBlock>
+                                <Button Grid.Column="2"
+                                        Style="{DynamicResource MaterialDesignFlatButton}"
+                                        Margin="4"
+                                        VerticalAlignment="Center">
+                                    <StackPanel Orientation="Horizontal">
+                                        <materialDesign:PackIcon Kind="WrenchOutline" Margin="4"
+                                                                 VerticalAlignment="Center" />
+                                        <TextBlock Margin="4" VerticalAlignment="Center">Fix Issue</TextBlock>
+                                    </StackPanel>
+                                </Button>
+                            </Grid>
+                        </materialDesign:DrawerHost.TopDrawerContent>
+                        <Grid
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Center">
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Button
+                                Command="{x:Static materialDesign:DrawerHost.OpenDrawerCommand}"
+                                CommandParameter="{x:Static Dock.Left}"
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                Margin="4"
+                                Content="{materialDesign:PackIcon Kind=ArrowLeft}" />
+                            <Button
+                                Command="{x:Static materialDesign:DrawerHost.OpenDrawerCommand}"
+                                CommandParameter="{x:Static Dock.Top}"
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                Margin="4"
+                                Content="{materialDesign:PackIcon Kind=ArrowUp}" />
+                            <Button
+                                Command="{x:Static materialDesign:DrawerHost.OpenDrawerCommand}"
+                                CommandParameter="{x:Static Dock.Right}"
+                                Grid.Row="1"
+                                Grid.Column="2"
+                                Margin="4"
+                                Content="{materialDesign:PackIcon Kind=ArrowRight}" />
+                            <Button
+                                Command="{x:Static materialDesign:DrawerHost.OpenDrawerCommand}"
+                                CommandParameter="{x:Static Dock.Bottom}"
+                                Grid.Row="2"
+                                Grid.Column="1"
+                                Margin="4"
+                                Content="{materialDesign:PackIcon Kind=ArrowDown}" />
+                            <Button
+                                Command="{x:Static materialDesign:DrawerHost.OpenDrawerCommand}"
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                Margin="4"
+                                Style="{DynamicResource MaterialDesignRaisedAccentButton}"
+                                Content="{materialDesign:PackIcon Kind=ArrowAll}" />
+                        </Grid>
+                    </materialDesign:DrawerHost>
                 </TabItem>
                 <TabItem>
                     <TabItem.Header>
