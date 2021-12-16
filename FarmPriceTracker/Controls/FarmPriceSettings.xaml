@@ -24,7 +24,12 @@
     <Grid>
         <DockPanel>
             <StackPanel Height="40" DockPanel.Dock="Bottom" Orientation="Horizontal" HorizontalAlignment="Right">
-                <Button x:Name="CloseBtn" CommandParameter="{x:Reference ThisWindow}">Close</Button>
+                <Button x:Name="SaveBtn">
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="ContentSave" />
+                        <TextBlock>Save</TextBlock>
+                    </StackPanel>
+                </Button>
             </StackPanel>
             <StackPanel Margin="5">
                 <Grid>
@@ -48,13 +53,12 @@
                             x:Name="BrowseBtn"
                             Style="{StaticResource MaterialDesignFlatButton}"
                             Content="{materialDesign:PackIcon FolderOpen}"
-                            ToolTip="Browse for folder"
-                            CommandParameter="{x:Reference ThisWindow}" />
+                            ToolTip="Browse for folder" />
                     <Button Grid.Column="3"
                             x:Name="Fs22LocationBtn"
                             Style="{StaticResource MaterialDesignFlatButton}"
                             Content="{materialDesign:PackIcon Steam}"
-                            ToolTip="Browse for folder" />
+                            ToolTip="Set to data folder in Steam installation" />
                 </Grid>
             </StackPanel>
         </DockPanel>

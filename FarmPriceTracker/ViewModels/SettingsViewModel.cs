@@ -51,7 +51,7 @@ public class SettingsViewModel : ReactiveValidationObject {
       .ToProperty(this, x => x.DataFolderValid, scheduler: RxApp.MainThreadScheduler);
 
     BrowseForDataFolder = ReactiveCommand.Create<Window>(OpenFileDialogForDataFolder);
-    CloseSettings = ReactiveCommand.Create<Window>(CloseSettingsWindow);
+    SaveSettings = ReactiveCommand.Create(SaveSettingsToFile);
     GetFs22Location = ReactiveCommand.Create(FindFs22Location);
   }
 
@@ -62,7 +62,7 @@ public class SettingsViewModel : ReactiveValidationObject {
     set => this.RaiseAndSetIfChanged(ref _dataFolder, value);
   }
 
-  public ReactiveCommand<Window, Unit> CloseSettings { get; }
+  public ReactiveCommand<Unit, Unit> SaveSettings { get; }
   public ReactiveCommand<Window, Unit> BrowseForDataFolder { get; }
   public ReactiveCommand<Unit, Unit> GetFs22Location { get; }
 
@@ -97,8 +97,7 @@ public class SettingsViewModel : ReactiveValidationObject {
     }
   }
 
-  private void CloseSettingsWindow(Window window) {
-    window.Close();
+  private void SaveSettingsToFile() {
     SaveSettingsFile();
   }
 

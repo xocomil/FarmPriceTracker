@@ -12,7 +12,7 @@
                     Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
             </ResourceDictionary.MergedDictionaries>
             <Style TargetType="{x:Type Button}"
-                   BasedOn="{StaticResource MaterialDesignRaisedSecondaryDarkButton}" />
+                   BasedOn="{StaticResource MaterialDesignRaisedDarkButton}" />
         </ResourceDictionary>
     </Application.Resources>
 </Application>
