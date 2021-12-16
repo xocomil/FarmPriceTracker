@@ -1,10 +1,13 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Reactive;
 using System.Reactive.Linq;
 using System.Windows;
+using System.Windows.Controls;
 using AssemblyScanning;
 using DataTypes.Interfaces;
+using FarmSimulator22Integrations.Parsers;
 using MaterialDesignThemes.Wpf;
 using Microsoft.Extensions.DependencyInjection;
 using ReactiveUI;
@@ -21,7 +24,10 @@ public class MainViewModel : ReactiveObject {
   public MainViewModel(SettingsViewModel settingsViewModel) {
     SettingsViewModel = settingsViewModel;
 
+    FixButtonClicked = ReactiveCommand.Create<TabControl>(FixButtonCommandHandler);
+
     ShowErrorMessage = ReactiveCommand.Create<string>(EnqueueError);
+    LoadFillTypes = ReactiveCommand.Create(LoadFillTypesFromData);
 
     _fillTypesEmpty = this.WhenAnyValue(vm => vm.FillTypes)
       .Select(fillTypes => fillTypes is null || !fillTypes.Any())
@@ -41,7 +47,23 @@ public class MainViewModel : ReactiveObject {
 
   public ReactiveCommand<string, Unit> ShowErrorMessage { get; }
 
+  public ReactiveCommand<Unit, Unit> LoadFillTypes { get; }
+
+  public ReactiveCommand<TabControl, Unit> FixButtonClicked { get; }
+
   public SettingsViewModel SettingsViewModel { get; }
+
+  private void FixButtonCommandHandler(TabControl tabControl) {
+    tabControl.Dispatcher.BeginInvoke(() => tabControl.SelectedIndex = 1);
+
+    using IDisposable sub = SettingsViewModel.FocusDataFolder.Execute().Subscribe();
+  }
+
+  private void LoadFillTypesFromData() {
+    var map = Fs22Map.CreateInstance(SettingsViewModel.DataFolder);
+
+    _fillTypes = map?.FillTypes;
+  }
 
   private void EnqueueError(string message) {
     ErrorMessageQueue.Enqueue(message);

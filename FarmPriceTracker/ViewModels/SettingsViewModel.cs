@@ -66,6 +66,8 @@ public class SettingsViewModel : ReactiveValidationObject {
   public ReactiveCommand<Window, Unit> BrowseForDataFolder { get; }
   public ReactiveCommand<Unit, Unit> GetFs22Location { get; }
 
+  public ReactiveCommand<Unit, Unit> FocusDataFolder { get; } = ReactiveCommand.Create(() => { });
+
   public new ValidationContext ValidationContext { get; } = new();
 
   private void FindFs22Location() {

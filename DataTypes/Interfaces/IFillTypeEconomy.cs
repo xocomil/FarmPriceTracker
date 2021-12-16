@@ -1,12 +1,10 @@
-﻿using System.Collections.ObjectModel;
-
-namespace DataTypes.Interfaces;
+﻿namespace DataTypes.Interfaces;
 
 public interface IFillTypeEconomy {
-  Collection<IFillTypeEconomyFactors> Factors { get; }
+  IEnumerable<IFillTypeEconomyFactor> Factors { get; }
 
   bool FactorsSpecified { get; }
 
-  float PricePerLiter { get; }
+  decimal PricePerLiter { get; }
   bool PricePerLiterSpecified { get; }
 }

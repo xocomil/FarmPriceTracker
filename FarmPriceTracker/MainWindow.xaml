@@ -17,6 +17,7 @@
     <Grid>
         <DockPanel>
             <TabControl
+                x:Name="TabControl"
                 Style="{StaticResource MaterialDesignNavigatilRailTabControl}"
                 TabStripPlacement="Left"
                 materialDesign:ColorZoneAssist.Mode="PrimaryMid"
@@ -68,9 +69,11 @@
                                     No fill types are available. This is most likely because you have not chosen the proper data folder. Make sure to choose the data folder from your install directory.
                                 </TextBlock>
                                 <Button Grid.Column="2"
+                                        x:Name="FixBtn"
                                         Style="{DynamicResource MaterialDesignFlatButton}"
                                         Margin="4"
-                                        VerticalAlignment="Center">
+                                        VerticalAlignment="Center"
+                                        CommandParameter="{x:Reference TabControl}">
                                     <StackPanel Orientation="Horizontal">
                                         <materialDesign:PackIcon Kind="WrenchOutline" Margin="4"
                                                                  VerticalAlignment="Center" />
