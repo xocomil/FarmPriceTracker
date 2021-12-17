@@ -19,6 +19,8 @@ public class MainViewModel : ReactiveObject {
   private readonly ObservableAsPropertyHelper<bool> _fillTypesEmpty;
   public readonly SnackbarMessageQueue ErrorMessageQueue = new();
 
+  private string _fillTypeFilter = string.Empty;
+
   private List<Fs22FillTypePriceData> _fillTypes;
 
   public MainViewModel(SettingsViewModel settingsViewModel) {
@@ -38,7 +40,12 @@ public class MainViewModel : ReactiveObject {
 
   public List<Fs22FillTypePriceData> FillTypes {
     get => _fillTypes;
-    set => this.RaiseAndSetIfChanged(ref _fillTypes, value);
+    private set => this.RaiseAndSetIfChanged(ref _fillTypes, value);
+  }
+
+  public string FillTypeFilter {
+    get => _fillTypeFilter;
+    set => this.RaiseAndSetIfChanged(ref _fillTypeFilter, value);
   }
 
   public ReactiveCommand<Unit, Unit> ExitCommand { get; } = ReactiveCommand.Create(
