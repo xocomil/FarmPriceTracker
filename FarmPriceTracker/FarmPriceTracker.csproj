@@ -19,12 +19,13 @@
 
     <ItemGroup>
         <ProjectReference Include="..\AssemblyScanning\AssemblyScanning.csproj" />
+        <ProjectReference Include="..\DataTypes\DataTypes.csproj" />
         <ProjectReference Include="..\FarmSimulator22Integrations\FarmSimulator22Integrations.csproj" />
         <ProjectReference Include="..\GameLibrary\GameLibrary.csproj" />
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Windows" />
+        <Folder Include="Windows" />
     </ItemGroup>
 
 </Project>

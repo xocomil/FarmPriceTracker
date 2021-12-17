@@ -1,4 +1,5 @@
-﻿using System.Reactive.Disposables;
+﻿using System;
+using System.Reactive.Disposables;
 using System.Reactive.Linq;
 using FarmPriceTracker.ViewModels;
 using ReactiveUI;
@@ -27,6 +28,15 @@ public partial class FarmPriceSettings {
           .DisposeWith(disposableRegistrations);
 
         this.OneWayBind(ViewModel, vm => vm.DataFolderValid, view => view.FolderCog!.Visibility)
+          .DisposeWith(disposableRegistrations);
+
+        this.WhenAnyObservable(x => x.ViewModel!.FocusDataFolder)
+          .Subscribe(
+            _ => {
+              DataFolder?.Focus();
+              DataFolder?.SelectAll();
+            }
+          )
           .DisposeWith(disposableRegistrations);
       }
     );

@@ -66,6 +66,8 @@ public class SettingsViewModel : ReactiveValidationObject {
   public ReactiveCommand<Window, Unit> BrowseForDataFolder { get; }
   public ReactiveCommand<Unit, Unit> GetFs22Location { get; }
 
+  public ReactiveCommand<Unit, Unit> FocusDataFolder { get; } = ReactiveCommand.Create(() => { });
+
   public new ValidationContext ValidationContext { get; } = new();
 
   private void FindFs22Location() {
@@ -87,12 +89,12 @@ public class SettingsViewModel : ReactiveValidationObject {
       .Subscribe();
   }
 
-  private void OpenFileDialogForDataFolder(Window parent) {
+  private void OpenFileDialogForDataFolder(Window? parent) {
     var dialog = new FolderBrowserDialog {
       InitialDirectory = DataFolder, Description = "Location of Data Folder", UseDescriptionForTitle = true
     };
 
-    if ( dialog.ShowDialog(parent.GetIWin32Window()) == DialogResult.OK ) {
+    if ( dialog.ShowDialog(parent?.GetIWin32Window()) == DialogResult.OK ) {
       DataFolder = dialog.SelectedPath ?? string.Empty;
     }
   }

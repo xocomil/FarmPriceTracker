@@ -11,8 +11,8 @@
 // xscgen "C:\SteamLibrary\steamapps\common\Farming Simulator 22\shared\xml\schema\fillTypes.xsd" -n =FarmSimulatorFillType
 namespace FarmSimulator22Integrations.Parsers
 {
-    
-    
+
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "2.0.629.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute("SoundManager_sound", Namespace="")]
@@ -20,10 +20,10 @@ namespace FarmSimulator22Integrations.Parsers
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class SoundManager_Sound
     {
-        
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         private System.Collections.ObjectModel.Collection<SoundManager_SoundVolume> _volume;
-        
+
         [System.Xml.Serialization.XmlElementAttribute("volume", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public System.Collections.ObjectModel.Collection<SoundManager_SoundVolume> Volume
         {
@@ -36,7 +36,7 @@ namespace FarmSimulator22Integrations.Parsers
                 this._volume = value;
             }
         }
-        
+
         /// <summary>
         /// <para xml:lang="en">Gets a value indicating whether the Volume collection is empty.</para>
         /// </summary>
@@ -48,7 +48,7 @@ namespace FarmSimulator22Integrations.Parsers
                 return (this.Volume.Count != 0);
             }
         }
-        
+
         /// <summary>
         /// <para xml:lang="en">Initializes a new instance of the <see cref="SoundManager_Sound" /> class.</para>
         /// </summary>
@@ -62,10 +62,10 @@ namespace FarmSimulator22Integrations.Parsers
             this._randomization = new System.Collections.ObjectModel.Collection<SoundManager_SoundRandomization>();
             this._sourceRandomization = new System.Collections.ObjectModel.Collection<SoundManager_SoundSourceRandomization>();
         }
-        
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         private System.Collections.ObjectModel.Collection<SoundManager_SoundPitch> _pitch;
-        
+
         [System.Xml.Serialization.XmlElementAttribute("pitch", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public System.Collections.ObjectModel.Collection<SoundManager_SoundPitch> Pitch
         {
@@ -78,7 +78,7 @@ namespace FarmSimulator22Integrations.Parsers
                 this._pitch = value;
             }
         }
-        
+
         /// <summary>
         /// <para xml:lang="en">Gets a value indicating whether the Pitch collection is empty.</para>
         /// </summary>
@@ -90,10 +90,10 @@ namespace FarmSimulator22Integrations.Parsers
                 return (this.Pitch.Count != 0);
             }
         }
-        
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         private System.Collections.ObjectModel.Collection<SoundManager_SoundLowpassGain> _lowpassGain;
-        
+
         [System.Xml.Serialization.XmlElementAttribute("lowpassGain", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public System.Collections.ObjectModel.Collection<SoundManager_SoundLowpassGain> LowpassGain
         {
@@ -106,7 +106,7 @@ namespace FarmSimulator22Integrations.Parsers
                 this._lowpassGain = value;
             }
         }
-        
+
         /// <summary>
         /// <para xml:lang="en">Gets a value indicating whether the LowpassGain collection is empty.</para>
         /// </summary>
@@ -118,10 +118,10 @@ namespace FarmSimulator22Integrations.Parsers
                 return (this.LowpassGain.Count != 0);
             }
         }
-        
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         private System.Collections.ObjectModel.Collection<SoundManager_SoundLowpassCutoffFrequency> _lowpassCutoffFrequency;
-        
+
         [System.Xml.Serialization.XmlElementAttribute("lowpassCutoffFrequency", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public System.Collections.ObjectModel.Collection<SoundManager_SoundLowpassCutoffFrequency> LowpassCutoffFrequency
         {
@@ -134,7 +134,7 @@ namespace FarmSimulator22Integrations.Parsers
                 this._lowpassCutoffFrequency = value;
             }
         }
-        
+
         /// <summary>
         /// <para xml:lang="en">Gets a value indicating whether the LowpassCutoffFrequency collection is empty.</para>
         /// </summary>
@@ -146,10 +146,10 @@ namespace FarmSimulator22Integrations.Parsers
                 return (this.LowpassCutoffFrequency.Count != 0);
             }
         }
-        
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         private System.Collections.ObjectModel.Collection<SoundManager_SoundLowpassResonance> _lowpassResonance;
-        
+
         [System.Xml.Serialization.XmlElementAttribute("lowpassResonance", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public System.Collections.ObjectModel.Collection<SoundManager_SoundLowpassResonance> LowpassResonance
         {
@@ -162,7 +162,7 @@ namespace FarmSimulator22Integrations.Parsers
                 this._lowpassResonance = value;
             }
         }
-        
+
         /// <summary>
         /// <para xml:lang="en">Gets a value indicating whether the LowpassResonance collection is empty.</para>
         /// </summary>
@@ -174,10 +174,10 @@ namespace FarmSimulator22Integrations.Parsers
                 return (this.LowpassResonance.Count != 0);
             }
         }
-        
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         private System.Collections.ObjectModel.Collection<SoundManager_SoundRandomization> _randomization;
-        
+
         [System.Xml.Serialization.XmlElementAttribute("randomization", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public System.Collections.ObjectModel.Collection<SoundManager_SoundRandomization> Randomization
         {
@@ -190,7 +190,7 @@ namespace FarmSimulator22Integrations.Parsers
                 this._randomization = value;
             }
         }
-        
+
         /// <summary>
         /// <para xml:lang="en">Gets a value indicating whether the Randomization collection is empty.</para>
         /// </summary>
@@ -202,10 +202,10 @@ namespace FarmSimulator22Integrations.Parsers
                 return (this.Randomization.Count != 0);
             }
         }
-        
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         private System.Collections.ObjectModel.Collection<SoundManager_SoundSourceRandomization> _sourceRandomization;
-        
+
         [System.Xml.Serialization.XmlElementAttribute("sourceRandomization", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public System.Collections.ObjectModel.Collection<SoundManager_SoundSourceRandomization> SourceRandomization
         {
@@ -218,7 +218,7 @@ namespace FarmSimulator22Integrations.Parsers
                 this._sourceRandomization = value;
             }
         }
-        
+
         /// <summary>
         /// <para xml:lang="en">Gets a value indicating whether the SourceRandomization collection is empty.</para>
         /// </summary>
@@ -230,22 +230,22 @@ namespace FarmSimulator22Integrations.Parsers
                 return (this.SourceRandomization.Count != 0);
             }
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute("linkNode")]
         public string LinkNode { get; set; }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute("template")]
         public string Template { get; set; }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute("parent")]
         public string Parent { get; set; }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute("file")]
         public string File { get; set; }
-        
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         private float _outerRadius = 5F;
-        
+
         [System.ComponentModel.DefaultValueAttribute(5F)]
         [System.Xml.Serialization.XmlAttributeAttribute("outerRadius")]
         public float OuterRadius
@@ -259,10 +259,10 @@ namespace FarmSimulator22Integrations.Parsers
                 this._outerRadius = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         private float _innerRadius = 80F;
-        
+
         [System.ComponentModel.DefaultValueAttribute(80F)]
         [System.Xml.Serialization.XmlAttributeAttribute("innerRadius")]
         public float InnerRadius
@@ -276,10 +276,10 @@ namespace FarmSimulator22Integrations.Parsers
                 this._innerRadius = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         private string _loops = "1";
-        
+
         [System.ComponentModel.DefaultValueAttribute("1")]
         [System.Xml.Serialization.XmlAttributeAttribute("loops")]
         public string Loops
@@ -293,10 +293,10 @@ namespace FarmSimulator22Integrations.Parsers
                 this._loops = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         private string _supportsReverb = "true";
-        
+
         /// <summary>
         /// <para xml:lang="en">Pattern: true|false.</para>
         /// </summary>
@@ -314,10 +314,10 @@ namespace FarmSimulator22Integrations.Parsers
                 this._supportsReverb = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         private string _debug = "false";
-        
+
         /// <summary>
         /// <para xml:lang="en">Pattern: true|false.</para>
         /// </summary>
@@ -335,10 +335,10 @@ namespace FarmSimulator22Integrations.Parsers
                 this._debug = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         private float _fadeIn = 0F;
-        
+
         [System.ComponentModel.DefaultValueAttribute(0F)]
         [System.Xml.Serialization.XmlAttributeAttribute("fadeIn")]
         public float FadeIn
@@ -352,10 +352,10 @@ namespace FarmSimulator22Integrations.Parsers
                 this._fadeIn = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         private float _fadeOut = 0F;
-        
+
         [System.ComponentModel.DefaultValueAttribute(0F)]
         [System.Xml.Serialization.XmlAttributeAttribute("fadeOut")]
         public float FadeOut
@@ -369,10 +369,10 @@ namespace FarmSimulator22Integrations.Parsers
                 this._fadeOut = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         private float _volumeScale = 1F;
-        
+
         [System.ComponentModel.DefaultValueAttribute(1F)]
         [System.Xml.Serialization.XmlAttributeAttribute("volumeScale")]
         public float VolumeScale
@@ -386,10 +386,10 @@ namespace FarmSimulator22Integrations.Parsers
                 this._volumeScale = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         private float _pitchScale = 1F;
-        
+
         [System.ComponentModel.DefaultValueAttribute(1F)]
         [System.Xml.Serialization.XmlAttributeAttribute("pitchScale")]
         public float PitchScale
@@ -403,10 +403,10 @@ namespace FarmSimulator22Integrations.Parsers
                 this._pitchScale = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         private float _lowpassGainScale = 1F;
-        
+
         [System.ComponentModel.DefaultValueAttribute(1F)]
         [System.Xml.Serialization.XmlAttributeAttribute("lowpassGainScale")]
         public float LowpassGainScale
@@ -421,7 +421,7 @@ namespace FarmSimulator22Integrations.Parsers
             }
         }
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "2.0.629.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute("SoundManager_SoundVolume", Namespace="", AnonymousType=true)]
@@ -429,10 +429,10 @@ namespace FarmSimulator22Integrations.Parsers
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class SoundManager_SoundVolume
     {
-        
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         private System.Collections.ObjectModel.Collection<SoundManager_SoundVolumeModifier> _modifier;
-        
+
         [System.Xml.Serialization.XmlElementAttribute("modifier", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public System.Collections.ObjectModel.Collection<SoundManager_SoundVolumeModifier> Modifier
         {
@@ -445,7 +445,7 @@ namespace FarmSimulator22Integrations.Parsers
                 this._modifier = value;
             }
         }
-        
+
         /// <summary>
         /// <para xml:lang="en">Gets a value indicating whether the Modifier collection is empty.</para>
         /// </summary>
@@ -457,7 +457,7 @@ namespace FarmSimulator22Integrations.Parsers
                 return (this.Modifier.Count != 0);
             }
         }
-        
+
         /// <summary>
         /// <para xml:lang="en">Initializes a new instance of the <see cref="SoundManager_SoundVolume" /> class.</para>
         /// </summary>
@@ -465,10 +465,10 @@ namespace FarmSimulator22Integrations.Parsers
         {
             this._modifier = new System.Collections.ObjectModel.Collection<SoundManager_SoundVolumeModifier>();
         }
-        
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         private float _indoor = 0.8F;
-        
+
         [System.ComponentModel.DefaultValueAttribute(0.8F)]
         [System.Xml.Serialization.XmlAttributeAttribute("indoor")]
         public float Indoor
@@ -482,10 +482,10 @@ namespace FarmSimulator22Integrations.Parsers
                 this._indoor = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         private float _outdoor = 1F;
-        
+
         [System.ComponentModel.DefaultValueAttribute(1F)]
         [System.Xml.Serialization.XmlAttributeAttribute("outdoor")]
         public float Outdoor
@@ -500,7 +500,7 @@ namespace FarmSimulator22Integrations.Parsers
             }
         }
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "2.0.629.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute("SoundManager_SoundVolumeModifier", Namespace="", AnonymousType=true)]
@@ -508,29 +508,29 @@ namespace FarmSimulator22Integrations.Parsers
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class SoundManager_SoundVolumeModifier
     {
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute("type")]
         public string Type { get; set; }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute("value")]
         public float Value { get; set; }
-        
+
         /// <summary>
         /// <para xml:lang="en">Gets or sets a value indicating whether the Value property is specified.</para>
         /// </summary>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool ValueSpecified { get; set; }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute("modifiedValue")]
         public float ModifiedValue { get; set; }
-        
+
         /// <summary>
         /// <para xml:lang="en">Gets or sets a value indicating whether the ModifiedValue property is specified.</para>
         /// </summary>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool ModifiedValueSpecified { get; set; }
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "2.0.629.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute("SoundManager_SoundPitch", Namespace="", AnonymousType=true)]
@@ -538,10 +538,10 @@ namespace FarmSimulator22Integrations.Parsers
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class SoundManager_SoundPitch
     {
-        
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         private System.Collections.ObjectModel.Collection<SoundManager_SoundPitchModifier> _modifier;
-        
+
         [System.Xml.Serialization.XmlElementAttribute("modifier", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public System.Collections.ObjectModel.Collection<SoundManager_SoundPitchModifier> Modifier
         {
@@ -554,7 +554,7 @@ namespace FarmSimulator22Integrations.Parsers
                 this._modifier = value;
             }
         }
-        
+
         /// <summary>
         /// <para xml:lang="en">Gets a value indicating whether the Modifier collection is empty.</para>
         /// </summary>
@@ -566,7 +566,7 @@ namespace FarmSimulator22Integrations.Parsers
                 return (this.Modifier.Count != 0);
             }
         }
-        
+
         /// <summary>
         /// <para xml:lang="en">Initializes a new instance of the <see cref="SoundManager_SoundPitch" /> class.</para>
         /// </summary>
@@ -574,10 +574,10 @@ namespace FarmSimulator22Integrations.Parsers
         {
             this._modifier = new System.Collections.ObjectModel.Collection<SoundManager_SoundPitchModifier>();
         }
-        
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         private float _indoor = 1F;
-        
+
         [System.ComponentModel.DefaultValueAttribute(1F)]
         [System.Xml.Serialization.XmlAttributeAttribute("indoor")]
         public float Indoor
@@ -591,10 +591,10 @@ namespace FarmSimulator22Integrations.Parsers
                 this._indoor = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         private float _outdoor = 1F;
-        
+
         [System.ComponentModel.DefaultValueAttribute(1F)]
         [System.Xml.Serialization.XmlAttributeAttribute("outdoor")]
         public float Outdoor
@@ -609,7 +609,7 @@ namespace FarmSimulator22Integrations.Parsers
             }
         }
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "2.0.629.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute("SoundManager_SoundPitchModifier", Namespace="", AnonymousType=true)]
@@ -617,29 +617,29 @@ namespace FarmSimulator22Integrations.Parsers
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class SoundManager_SoundPitchModifier
     {
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute("type")]
         public string Type { get; set; }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute("value")]
         public float Value { get; set; }
-        
+
         /// <summary>
         /// <para xml:lang="en">Gets or sets a value indicating whether the Value property is specified.</para>
         /// </summary>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool ValueSpecified { get; set; }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute("modifiedValue")]
         public float ModifiedValue { get; set; }
-        
+
         /// <summary>
         /// <para xml:lang="en">Gets or sets a value indicating whether the ModifiedValue property is specified.</para>
         /// </summary>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool ModifiedValueSpecified { get; set; }
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "2.0.629.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute("SoundManager_SoundLowpassGain", Namespace="", AnonymousType=true)]
@@ -647,10 +647,10 @@ namespace FarmSimulator22Integrations.Parsers
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class SoundManager_SoundLowpassGain
     {
-        
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         private System.Collections.ObjectModel.Collection<SoundManager_SoundLowpassGainModifier> _modifier;
-        
+
         [System.Xml.Serialization.XmlElementAttribute("modifier", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public System.Collections.ObjectModel.Collection<SoundManager_SoundLowpassGainModifier> Modifier
         {
@@ -663,7 +663,7 @@ namespace FarmSimulator22Integrations.Parsers
                 this._modifier = value;
             }
         }
-        
+
         /// <summary>
         /// <para xml:lang="en">Gets a value indicating whether the Modifier collection is empty.</para>
         /// </summary>
@@ -675,7 +675,7 @@ namespace FarmSimulator22Integrations.Parsers
                 return (this.Modifier.Count != 0);
             }
         }
-        
+
         /// <summary>
         /// <para xml:lang="en">Initializes a new instance of the <see cref="SoundManager_SoundLowpassGain" /> class.</para>
         /// </summary>
@@ -683,10 +683,10 @@ namespace FarmSimulator22Integrations.Parsers
         {
             this._modifier = new System.Collections.ObjectModel.Collection<SoundManager_SoundLowpassGainModifier>();
         }
-        
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         private float _indoor = 0.8F;
-        
+
         [System.ComponentModel.DefaultValueAttribute(0.8F)]
         [System.Xml.Serialization.XmlAttributeAttribute("indoor")]
         public float Indoor
@@ -700,10 +700,10 @@ namespace FarmSimulator22Integrations.Parsers
                 this._indoor = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         private float _outdoor = 1F;
-        
+
         [System.ComponentModel.DefaultValueAttribute(1F)]
         [System.Xml.Serialization.XmlAttributeAttribute("outdoor")]
         public float Outdoor
@@ -718,7 +718,7 @@ namespace FarmSimulator22Integrations.Parsers
             }
         }
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "2.0.629.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute("SoundManager_SoundLowpassGainModifier", Namespace="", AnonymousType=true)]
@@ -726,29 +726,29 @@ namespace FarmSimulator22Integrations.Parsers
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class SoundManager_SoundLowpassGainModifier
     {
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute("type")]
         public string Type { get; set; }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute("value")]
         public float Value { get; set; }
-        
+
         /// <summary>
         /// <para xml:lang="en">Gets or sets a value indicating whether the Value property is specified.</para>
         /// </summary>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool ValueSpecified { get; set; }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute("modifiedValue")]
         public float ModifiedValue { get; set; }
-        
+
         /// <summary>
         /// <para xml:lang="en">Gets or sets a value indicating whether the ModifiedValue property is specified.</para>
         /// </summary>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool ModifiedValueSpecified { get; set; }
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "2.0.629.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute("SoundManager_SoundLowpassCutoffFrequency", Namespace="", AnonymousType=true)]
@@ -756,10 +756,10 @@ namespace FarmSimulator22Integrations.Parsers
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class SoundManager_SoundLowpassCutoffFrequency
     {
-        
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         private float _indoor = 5000F;
-        
+
         [System.ComponentModel.DefaultValueAttribute(5000F)]
         [System.Xml.Serialization.XmlAttributeAttribute("indoor")]
         public float Indoor
@@ -773,10 +773,10 @@ namespace FarmSimulator22Integrations.Parsers
                 this._indoor = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         private float _outdoor = 5000F;
-        
+
         [System.ComponentModel.DefaultValueAttribute(5000F)]
         [System.Xml.Serialization.XmlAttributeAttribute("outdoor")]
         public float Outdoor
@@ -791,7 +791,7 @@ namespace FarmSimulator22Integrations.Parsers
             }
         }
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "2.0.629.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute("SoundManager_SoundLowpassResonance", Namespace="", AnonymousType=true)]
@@ -799,10 +799,10 @@ namespace FarmSimulator22Integrations.Parsers
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class SoundManager_SoundLowpassResonance
     {
-        
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         private float _indoor = 2F;
-        
+
         [System.ComponentModel.DefaultValueAttribute(2F)]
         [System.Xml.Serialization.XmlAttributeAttribute("indoor")]
         public float Indoor
@@ -816,10 +816,10 @@ namespace FarmSimulator22Integrations.Parsers
                 this._indoor = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         private float _outdoor = 2F;
-        
+
         [System.ComponentModel.DefaultValueAttribute(2F)]
         [System.Xml.Serialization.XmlAttributeAttribute("outdoor")]
         public float Outdoor
@@ -834,7 +834,7 @@ namespace FarmSimulator22Integrations.Parsers
             }
         }
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "2.0.629.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute("SoundManager_SoundRandomization", Namespace="", AnonymousType=true)]
@@ -842,64 +842,64 @@ namespace FarmSimulator22Integrations.Parsers
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class SoundManager_SoundRandomization
     {
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute("minVolume")]
         public float MinVolume { get; set; }
-        
+
         /// <summary>
         /// <para xml:lang="en">Gets or sets a value indicating whether the MinVolume property is specified.</para>
         /// </summary>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool MinVolumeSpecified { get; set; }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute("maxVolume")]
         public float MaxVolume { get; set; }
-        
+
         /// <summary>
         /// <para xml:lang="en">Gets or sets a value indicating whether the MaxVolume property is specified.</para>
         /// </summary>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool MaxVolumeSpecified { get; set; }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute("minPitch")]
         public float MinPitch { get; set; }
-        
+
         /// <summary>
         /// <para xml:lang="en">Gets or sets a value indicating whether the MinPitch property is specified.</para>
         /// </summary>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool MinPitchSpecified { get; set; }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute("maxPitch")]
         public float MaxPitch { get; set; }
-        
+
         /// <summary>
         /// <para xml:lang="en">Gets or sets a value indicating whether the MaxPitch property is specified.</para>
         /// </summary>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool MaxPitchSpecified { get; set; }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute("minLowpassGain")]
         public float MinLowpassGain { get; set; }
-        
+
         /// <summary>
         /// <para xml:lang="en">Gets or sets a value indicating whether the MinLowpassGain property is specified.</para>
         /// </summary>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool MinLowpassGainSpecified { get; set; }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute("maxLowpassGain")]
         public float MaxLowpassGain { get; set; }
-        
+
         /// <summary>
         /// <para xml:lang="en">Gets or sets a value indicating whether the MaxLowpassGain property is specified.</para>
         /// </summary>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool MaxLowpassGainSpecified { get; set; }
-        
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         private string _isInside = "true";
-        
+
         /// <summary>
         /// <para xml:lang="en">Pattern: true|false.</para>
         /// </summary>
@@ -917,10 +917,10 @@ namespace FarmSimulator22Integrations.Parsers
                 this._isInside = value;
             }
         }
-        
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         private string _isOutside = "true";
-        
+
         /// <summary>
         /// <para xml:lang="en">Pattern: true|false.</para>
         /// </summary>
@@ -939,7 +939,7 @@ namespace FarmSimulator22Integrations.Parsers
             }
         }
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "2.0.629.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute("SoundManager_SoundSourceRandomization", Namespace="", AnonymousType=true)]
@@ -947,11 +947,11 @@ namespace FarmSimulator22Integrations.Parsers
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class SoundManager_SoundSourceRandomization
     {
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute("file")]
         public string File { get; set; }
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "2.0.629.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute("map", Namespace="", AnonymousType=true)]
@@ -960,10 +960,10 @@ namespace FarmSimulator22Integrations.Parsers
     [System.Xml.Serialization.XmlRootAttribute("map", Namespace="")]
     public partial class Map
     {
-        
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         private System.Collections.ObjectModel.Collection<MapFillTypesFillType> _fillTypes;
-        
+
         [System.Xml.Serialization.XmlArrayAttribute("fillTypes", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         [System.Xml.Serialization.XmlArrayItemAttribute("fillType", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public System.Collections.ObjectModel.Collection<MapFillTypesFillType> FillTypes
@@ -977,7 +977,7 @@ namespace FarmSimulator22Integrations.Parsers
                 this._fillTypes = value;
             }
         }
-        
+
         /// <summary>
         /// <para xml:lang="en">Gets a value indicating whether the FillTypes collection is empty.</para>
         /// </summary>
@@ -989,7 +989,7 @@ namespace FarmSimulator22Integrations.Parsers
                 return (this.FillTypes.Count != 0);
             }
         }
-        
+
         /// <summary>
         /// <para xml:lang="en">Initializes a new instance of the <see cref="Map" /> class.</para>
         /// </summary>
@@ -1000,13 +1000,13 @@ namespace FarmSimulator22Integrations.Parsers
             this._fillTypeConverters = new System.Collections.ObjectModel.Collection<MapFillTypeConvertersFillTypeConverter>();
             this._fillTypeSounds = new System.Collections.ObjectModel.Collection<MapFillTypeSoundsFillTypeSound>();
         }
-        
+
         [System.Xml.Serialization.XmlElementAttribute("parentFile", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public MapParentFile ParentFile { get; set; }
-        
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         private System.Collections.ObjectModel.Collection<MapFillTypeCategoriesFillTypeCategory> _fillTypeCategories;
-        
+
         [System.Xml.Serialization.XmlArrayAttribute("fillTypeCategories", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         [System.Xml.Serialization.XmlArrayItemAttribute("fillTypeCategory", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public System.Collections.ObjectModel.Collection<MapFillTypeCategoriesFillTypeCategory> FillTypeCategories
@@ -1020,7 +1020,7 @@ namespace FarmSimulator22Integrations.Parsers
                 this._fillTypeCategories = value;
             }
         }
-        
+
         /// <summary>
         /// <para xml:lang="en">Gets a value indicating whether the FillTypeCategories collection is empty.</para>
         /// </summary>
@@ -1032,10 +1032,10 @@ namespace FarmSimulator22Integrations.Parsers
                 return (this.FillTypeCategories.Count != 0);
             }
         }
-        
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         private System.Collections.ObjectModel.Collection<MapFillTypeConvertersFillTypeConverter> _fillTypeConverters;
-        
+
         [System.Xml.Serialization.XmlArrayAttribute("fillTypeConverters", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         [System.Xml.Serialization.XmlArrayItemAttribute("fillTypeConverter", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public System.Collections.ObjectModel.Collection<MapFillTypeConvertersFillTypeConverter> FillTypeConverters
@@ -1049,7 +1049,7 @@ namespace FarmSimulator22Integrations.Parsers
                 this._fillTypeConverters = value;
             }
         }
-        
+
         /// <summary>
         /// <para xml:lang="en">Gets a value indicating whether the FillTypeConverters collection is empty.</para>
         /// </summary>
@@ -1061,10 +1061,10 @@ namespace FarmSimulator22Integrations.Parsers
                 return (this.FillTypeConverters.Count != 0);
             }
         }
-        
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         private System.Collections.ObjectModel.Collection<MapFillTypeSoundsFillTypeSound> _fillTypeSounds;
-        
+
         [System.Xml.Serialization.XmlArrayAttribute("fillTypeSounds", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         [System.Xml.Serialization.XmlArrayItemAttribute("fillTypeSound", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public System.Collections.ObjectModel.Collection<MapFillTypeSoundsFillTypeSound> FillTypeSounds
@@ -1078,7 +1078,7 @@ namespace FarmSimulator22Integrations.Parsers
                 this._fillTypeSounds = value;
             }
         }
-        
+
         /// <summary>
         /// <para xml:lang="en">Gets a value indicating whether the FillTypeSounds collection is empty.</para>
         /// </summary>
@@ -1091,7 +1091,7 @@ namespace FarmSimulator22Integrations.Parsers
             }
         }
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "2.0.629.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute("MapFillTypes", Namespace="", AnonymousType=true)]
@@ -1099,10 +1099,10 @@ namespace FarmSimulator22Integrations.Parsers
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class MapFillTypes
     {
-        
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         private System.Collections.ObjectModel.Collection<MapFillTypesFillType> _fillType;
-        
+
         [System.Xml.Serialization.XmlElementAttribute("fillType", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public System.Collections.ObjectModel.Collection<MapFillTypesFillType> FillType
         {
@@ -1115,7 +1115,7 @@ namespace FarmSimulator22Integrations.Parsers
                 this._fillType = value;
             }
         }
-        
+
         /// <summary>
         /// <para xml:lang="en">Gets a value indicating whether the FillType collection is empty.</para>
         /// </summary>
@@ -1127,7 +1127,7 @@ namespace FarmSimulator22Integrations.Parsers
                 return (this.FillType.Count != 0);
             }
         }
-        
+
         /// <summary>
         /// <para xml:lang="en">Initializes a new instance of the <see cref="MapFillTypes" /> class.</para>
         /// </summary>
@@ -1136,7 +1136,7 @@ namespace FarmSimulator22Integrations.Parsers
             this._fillType = new System.Collections.ObjectModel.Collection<MapFillTypesFillType>();
         }
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "2.0.629.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute("MapFillTypesFillType", Namespace="", AnonymousType=true)]
@@ -1144,44 +1144,44 @@ namespace FarmSimulator22Integrations.Parsers
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class MapFillTypesFillType
     {
-        
+
         [System.Xml.Serialization.XmlElementAttribute("physics", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public MapFillTypesFillTypePhysics Physics { get; set; }
-        
+
         [System.Xml.Serialization.XmlElementAttribute("image", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public MapFillTypesFillTypeImage Image { get; set; }
-        
+
         [System.Xml.Serialization.XmlElementAttribute("pallet", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public MapFillTypesFillTypePallet Pallet { get; set; }
-        
+
         [System.Xml.Serialization.XmlElementAttribute("economy", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public MapFillTypesFillTypeEconomy Economy { get; set; }
-        
+
         [System.Xml.Serialization.XmlElementAttribute("textures", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public MapFillTypesFillTypeTextures Textures { get; set; }
-        
+
         [System.Xml.Serialization.XmlElementAttribute("effects", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public MapFillTypesFillTypeEffects Effects { get; set; }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute("name")]
         public string Name { get; set; }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute("title")]
         public string Title { get; set; }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute("achievementName")]
         public string AchievementName { get; set; }
-        
+
         /// <summary>
         /// <para xml:lang="en">Pattern: true|false.</para>
         /// </summary>
         [System.ComponentModel.DataAnnotations.RegularExpressionAttribute("true|false")]
         [System.Xml.Serialization.XmlAttributeAttribute("showOnPriceTable")]
         public string ShowOnPriceTable { get; set; }
-        
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         private System.Collections.ObjectModel.Collection<string> _fillPlaneColors;
-        
+
         /// <summary>
         /// <para xml:lang="en">Pattern: \S+ \S+ \S+.</para>
         /// </summary>
@@ -1198,7 +1198,7 @@ namespace FarmSimulator22Integrations.Parsers
                 this._fillPlaneColors = value;
             }
         }
-        
+
         /// <summary>
         /// <para xml:lang="en">Gets a value indicating whether the FillPlaneColors collection is empty.</para>
         /// </summary>
@@ -1210,7 +1210,7 @@ namespace FarmSimulator22Integrations.Parsers
                 return (this.FillPlaneColors.Count != 0);
             }
         }
-        
+
         /// <summary>
         /// <para xml:lang="en">Initializes a new instance of the <see cref="MapFillTypesFillType" /> class.</para>
         /// </summary>
@@ -1218,11 +1218,11 @@ namespace FarmSimulator22Integrations.Parsers
         {
             this._fillPlaneColors = new System.Collections.ObjectModel.Collection<string>();
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute("unitShort")]
         public string UnitShort { get; set; }
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "2.0.629.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute("MapFillTypesFillTypePhysics", Namespace="", AnonymousType=true)]
@@ -1230,26 +1230,26 @@ namespace FarmSimulator22Integrations.Parsers
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class MapFillTypesFillTypePhysics
     {
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute("massPerLiter")]
         public float MassPerLiter { get; set; }
-        
+
         /// <summary>
         /// <para xml:lang="en">Gets or sets a value indicating whether the MassPerLiter property is specified.</para>
         /// </summary>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool MassPerLiterSpecified { get; set; }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute("maxPhysicalSurfaceAngle")]
         public float MaxPhysicalSurfaceAngle { get; set; }
-        
+
         /// <summary>
         /// <para xml:lang="en">Gets or sets a value indicating whether the MaxPhysicalSurfaceAngle property is specified.</para>
         /// </summary>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool MaxPhysicalSurfaceAngleSpecified { get; set; }
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "2.0.629.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute("MapFillTypesFillTypeImage", Namespace="", AnonymousType=true)]
@@ -1257,11 +1257,11 @@ namespace FarmSimulator22Integrations.Parsers
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class MapFillTypesFillTypeImage
     {
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute("hud")]
         public string Hud { get; set; }
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "2.0.629.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute("MapFillTypesFillTypePallet", Namespace="", AnonymousType=true)]
@@ -1269,11 +1269,11 @@ namespace FarmSimulator22Integrations.Parsers
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class MapFillTypesFillTypePallet
     {
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute("filename")]
         public string Filename { get; set; }
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "2.0.629.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute("MapFillTypesFillTypeEconomy", Namespace="", AnonymousType=true)]
@@ -1281,10 +1281,10 @@ namespace FarmSimulator22Integrations.Parsers
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class MapFillTypesFillTypeEconomy
     {
-        
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         private System.Collections.ObjectModel.Collection<MapFillTypesFillTypeEconomyFactorsFactor> _factors;
-        
+
         [System.Xml.Serialization.XmlArrayAttribute("factors", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         [System.Xml.Serialization.XmlArrayItemAttribute("factor", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public System.Collections.ObjectModel.Collection<MapFillTypesFillTypeEconomyFactorsFactor> Factors
@@ -1298,7 +1298,7 @@ namespace FarmSimulator22Integrations.Parsers
                 this._factors = value;
             }
         }
-        
+
         /// <summary>
         /// <para xml:lang="en">Gets a value indicating whether the Factors collection is empty.</para>
         /// </summary>
@@ -1310,7 +1310,7 @@ namespace FarmSimulator22Integrations.Parsers
                 return (this.Factors.Count != 0);
             }
         }
-        
+
         /// <summary>
         /// <para xml:lang="en">Initializes a new instance of the <see cref="MapFillTypesFillTypeEconomy" /> class.</para>
         /// </summary>
@@ -1318,17 +1318,17 @@ namespace FarmSimulator22Integrations.Parsers
         {
             this._factors = new System.Collections.ObjectModel.Collection<MapFillTypesFillTypeEconomyFactorsFactor>();
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute("pricePerLiter")]
         public float PricePerLiter { get; set; }
-        
+
         /// <summary>
         /// <para xml:lang="en">Gets or sets a value indicating whether the PricePerLiter property is specified.</para>
         /// </summary>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool PricePerLiterSpecified { get; set; }
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "2.0.629.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute("MapFillTypesFillTypeEconomyFactors", Namespace="", AnonymousType=true)]
@@ -1336,10 +1336,10 @@ namespace FarmSimulator22Integrations.Parsers
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class MapFillTypesFillTypeEconomyFactors
     {
-        
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         private System.Collections.ObjectModel.Collection<MapFillTypesFillTypeEconomyFactorsFactor> _factor;
-        
+
         [System.Xml.Serialization.XmlElementAttribute("factor", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public System.Collections.ObjectModel.Collection<MapFillTypesFillTypeEconomyFactorsFactor> Factor
         {
@@ -1352,7 +1352,7 @@ namespace FarmSimulator22Integrations.Parsers
                 this._factor = value;
             }
         }
-        
+
         /// <summary>
         /// <para xml:lang="en">Gets a value indicating whether the Factor collection is empty.</para>
         /// </summary>
@@ -1364,7 +1364,7 @@ namespace FarmSimulator22Integrations.Parsers
                 return (this.Factor.Count != 0);
             }
         }
-        
+
         /// <summary>
         /// <para xml:lang="en">Initializes a new instance of the <see cref="MapFillTypesFillTypeEconomyFactors" /> class.</para>
         /// </summary>
@@ -1373,7 +1373,7 @@ namespace FarmSimulator22Integrations.Parsers
             this._factor = new System.Collections.ObjectModel.Collection<MapFillTypesFillTypeEconomyFactorsFactor>();
         }
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "2.0.629.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute("MapFillTypesFillTypeEconomyFactorsFactor", Namespace="", AnonymousType=true)]
@@ -1381,20 +1381,20 @@ namespace FarmSimulator22Integrations.Parsers
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class MapFillTypesFillTypeEconomyFactorsFactor
     {
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute("period")]
         public string Period { get; set; }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute("value")]
         public float Value { get; set; }
-        
+
         /// <summary>
         /// <para xml:lang="en">Gets or sets a value indicating whether the Value property is specified.</para>
         /// </summary>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool ValueSpecified { get; set; }
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "2.0.629.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute("MapFillTypesFillTypeTextures", Namespace="", AnonymousType=true)]
@@ -1402,20 +1402,20 @@ namespace FarmSimulator22Integrations.Parsers
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class MapFillTypesFillTypeTextures
     {
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute("diffuse")]
         public string Diffuse { get; set; }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute("normal")]
         public string Normal { get; set; }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute("specular")]
         public string Specular { get; set; }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute("distance")]
         public string Distance { get; set; }
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "2.0.629.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute("MapFillTypesFillTypeEffects", Namespace="", AnonymousType=true)]
@@ -1423,10 +1423,10 @@ namespace FarmSimulator22Integrations.Parsers
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class MapFillTypesFillTypeEffects
     {
-        
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         private string _prioritizedEffectType = "ShaderPlaneEffect";
-        
+
         [System.ComponentModel.DefaultValueAttribute("ShaderPlaneEffect")]
         [System.Xml.Serialization.XmlAttributeAttribute("prioritizedEffectType")]
         public string PrioritizedEffectType
@@ -1440,14 +1440,14 @@ namespace FarmSimulator22Integrations.Parsers
                 this._prioritizedEffectType = value;
             }
         }
-        
+
         /// <summary>
         /// <para xml:lang="en">Pattern: \S+ \S+ \S+ \S+.</para>
         /// </summary>
         [System.ComponentModel.DataAnnotations.RegularExpressionAttribute("\\S+ \\S+ \\S+ \\S+")]
         [System.Xml.Serialization.XmlAttributeAttribute("fillSmokeColor")]
         public System.Collections.ObjectModel.Collection<string> FillSmokeColor { get; private set; }
-        
+
         /// <summary>
         /// <para xml:lang="en">Gets a value indicating whether the FillSmokeColor collection is empty.</para>
         /// </summary>
@@ -1459,7 +1459,7 @@ namespace FarmSimulator22Integrations.Parsers
                 return (this.FillSmokeColor.Count != 0);
             }
         }
-        
+
         /// <summary>
         /// <para xml:lang="en">Initializes a new instance of the <see cref="MapFillTypesFillTypeEffects" /> class.</para>
         /// </summary>
@@ -1468,14 +1468,14 @@ namespace FarmSimulator22Integrations.Parsers
             this.FillSmokeColor = new System.Collections.ObjectModel.Collection<string>();
             this.FruitSmokeColor = new System.Collections.ObjectModel.Collection<string>();
         }
-        
+
         /// <summary>
         /// <para xml:lang="en">Pattern: \S+ \S+ \S+ \S+.</para>
         /// </summary>
         [System.ComponentModel.DataAnnotations.RegularExpressionAttribute("\\S+ \\S+ \\S+ \\S+")]
         [System.Xml.Serialization.XmlAttributeAttribute("fruitSmokeColor")]
         public System.Collections.ObjectModel.Collection<string> FruitSmokeColor { get; private set; }
-        
+
         /// <summary>
         /// <para xml:lang="en">Gets a value indicating whether the FruitSmokeColor collection is empty.</para>
         /// </summary>
@@ -1488,7 +1488,7 @@ namespace FarmSimulator22Integrations.Parsers
             }
         }
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "2.0.629.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute("MapParentFile", Namespace="", AnonymousType=true)]
@@ -1496,14 +1496,14 @@ namespace FarmSimulator22Integrations.Parsers
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class MapParentFile
     {
-        
+
         [System.Xml.Serialization.XmlElementAttribute("attributes", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public MapParentFileAttributes Attributes { get; set; }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute("xmlFilename")]
         public string XmlFilename { get; set; }
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "2.0.629.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute("MapParentFileAttributes", Namespace="", AnonymousType=true)]
@@ -1511,10 +1511,10 @@ namespace FarmSimulator22Integrations.Parsers
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class MapParentFileAttributes
     {
-        
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         private System.Collections.ObjectModel.Collection<MapParentFileAttributesRemove> _remove;
-        
+
         [System.Xml.Serialization.XmlElementAttribute("remove", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public System.Collections.ObjectModel.Collection<MapParentFileAttributesRemove> Remove
         {
@@ -1527,7 +1527,7 @@ namespace FarmSimulator22Integrations.Parsers
                 this._remove = value;
             }
         }
-        
+
         /// <summary>
         /// <para xml:lang="en">Gets a value indicating whether the Remove collection is empty.</para>
         /// </summary>
@@ -1539,7 +1539,7 @@ namespace FarmSimulator22Integrations.Parsers
                 return (this.Remove.Count != 0);
             }
         }
-        
+
         /// <summary>
         /// <para xml:lang="en">Initializes a new instance of the <see cref="MapParentFileAttributes" /> class.</para>
         /// </summary>
@@ -1549,10 +1549,10 @@ namespace FarmSimulator22Integrations.Parsers
             this._set = new System.Collections.ObjectModel.Collection<MapParentFileAttributesSet>();
             this._clearList = new System.Collections.ObjectModel.Collection<MapParentFileAttributesClearList>();
         }
-        
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         private System.Collections.ObjectModel.Collection<MapParentFileAttributesSet> _set;
-        
+
         [System.Xml.Serialization.XmlElementAttribute("set", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public System.Collections.ObjectModel.Collection<MapParentFileAttributesSet> Set
         {
@@ -1565,7 +1565,7 @@ namespace FarmSimulator22Integrations.Parsers
                 this._set = value;
             }
         }
-        
+
         /// <summary>
         /// <para xml:lang="en">Gets a value indicating whether the Set collection is empty.</para>
         /// </summary>
@@ -1577,10 +1577,10 @@ namespace FarmSimulator22Integrations.Parsers
                 return (this.Set.Count != 0);
             }
         }
-        
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         private System.Collections.ObjectModel.Collection<MapParentFileAttributesClearList> _clearList;
-        
+
         [System.Xml.Serialization.XmlElementAttribute("clearList", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public System.Collections.ObjectModel.Collection<MapParentFileAttributesClearList> ClearList
         {
@@ -1593,7 +1593,7 @@ namespace FarmSimulator22Integrations.Parsers
                 this._clearList = value;
             }
         }
-        
+
         /// <summary>
         /// <para xml:lang="en">Gets a value indicating whether the ClearList collection is empty.</para>
         /// </summary>
@@ -1606,7 +1606,7 @@ namespace FarmSimulator22Integrations.Parsers
             }
         }
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "2.0.629.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute("MapParentFileAttributesRemove", Namespace="", AnonymousType=true)]
@@ -1614,11 +1614,11 @@ namespace FarmSimulator22Integrations.Parsers
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class MapParentFileAttributesRemove
     {
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute("path")]
         public string Path { get; set; }
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "2.0.629.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute("MapParentFileAttributesSet", Namespace="", AnonymousType=true)]
@@ -1626,14 +1626,14 @@ namespace FarmSimulator22Integrations.Parsers
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class MapParentFileAttributesSet
     {
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute("path")]
         public string Path { get; set; }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute("value")]
         public string Value { get; set; }
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "2.0.629.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute("MapParentFileAttributesClearList", Namespace="", AnonymousType=true)]
@@ -1641,14 +1641,14 @@ namespace FarmSimulator22Integrations.Parsers
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class MapParentFileAttributesClearList
     {
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute("path")]
         public string Path { get; set; }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute("keepIndex")]
         public string KeepIndex { get; set; }
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "2.0.629.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute("MapFillTypeCategories", Namespace="", AnonymousType=true)]
@@ -1656,10 +1656,10 @@ namespace FarmSimulator22Integrations.Parsers
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class MapFillTypeCategories
     {
-        
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         private System.Collections.ObjectModel.Collection<MapFillTypeCategoriesFillTypeCategory> _fillTypeCategory;
-        
+
         [System.Xml.Serialization.XmlElementAttribute("fillTypeCategory", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public System.Collections.ObjectModel.Collection<MapFillTypeCategoriesFillTypeCategory> FillTypeCategory
         {
@@ -1672,7 +1672,7 @@ namespace FarmSimulator22Integrations.Parsers
                 this._fillTypeCategory = value;
             }
         }
-        
+
         /// <summary>
         /// <para xml:lang="en">Gets a value indicating whether the FillTypeCategory collection is empty.</para>
         /// </summary>
@@ -1684,7 +1684,7 @@ namespace FarmSimulator22Integrations.Parsers
                 return (this.FillTypeCategory.Count != 0);
             }
         }
-        
+
         /// <summary>
         /// <para xml:lang="en">Initializes a new instance of the <see cref="MapFillTypeCategories" /> class.</para>
         /// </summary>
@@ -1693,7 +1693,7 @@ namespace FarmSimulator22Integrations.Parsers
             this._fillTypeCategory = new System.Collections.ObjectModel.Collection<MapFillTypeCategoriesFillTypeCategory>();
         }
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "2.0.629.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute("MapFillTypeCategoriesFillTypeCategory", Namespace="")]
@@ -1701,17 +1701,17 @@ namespace FarmSimulator22Integrations.Parsers
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class MapFillTypeCategoriesFillTypeCategory
     {
-        
+
         /// <summary>
         /// <para xml:lang="en">Gets or sets the text value.</para>
         /// </summary>
         [System.Xml.Serialization.XmlTextAttribute()]
         public string Value { get; set; }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute("name")]
         public string Name { get; set; }
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "2.0.629.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute("MapFillTypeConverters", Namespace="", AnonymousType=true)]
@@ -1719,10 +1719,10 @@ namespace FarmSimulator22Integrations.Parsers
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class MapFillTypeConverters
     {
-        
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         private System.Collections.ObjectModel.Collection<MapFillTypeConvertersFillTypeConverter> _fillTypeConverter;
-        
+
         [System.Xml.Serialization.XmlElementAttribute("fillTypeConverter", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public System.Collections.ObjectModel.Collection<MapFillTypeConvertersFillTypeConverter> FillTypeConverter
         {
@@ -1735,7 +1735,7 @@ namespace FarmSimulator22Integrations.Parsers
                 this._fillTypeConverter = value;
             }
         }
-        
+
         /// <summary>
         /// <para xml:lang="en">Gets a value indicating whether the FillTypeConverter collection is empty.</para>
         /// </summary>
@@ -1747,7 +1747,7 @@ namespace FarmSimulator22Integrations.Parsers
                 return (this.FillTypeConverter.Count != 0);
             }
         }
-        
+
         /// <summary>
         /// <para xml:lang="en">Initializes a new instance of the <see cref="MapFillTypeConverters" /> class.</para>
         /// </summary>
@@ -1756,7 +1756,7 @@ namespace FarmSimulator22Integrations.Parsers
             this._fillTypeConverter = new System.Collections.ObjectModel.Collection<MapFillTypeConvertersFillTypeConverter>();
         }
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "2.0.629.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute("MapFillTypeConvertersFillTypeConverter", Namespace="", AnonymousType=true)]
@@ -1764,10 +1764,10 @@ namespace FarmSimulator22Integrations.Parsers
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class MapFillTypeConvertersFillTypeConverter
     {
-        
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         private System.Collections.ObjectModel.Collection<MapFillTypeConvertersFillTypeConverterConverter> _converter;
-        
+
         [System.Xml.Serialization.XmlElementAttribute("converter", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public System.Collections.ObjectModel.Collection<MapFillTypeConvertersFillTypeConverterConverter> Converter
         {
@@ -1780,7 +1780,7 @@ namespace FarmSimulator22Integrations.Parsers
                 this._converter = value;
             }
         }
-        
+
         /// <summary>
         /// <para xml:lang="en">Gets a value indicating whether the Converter collection is empty.</para>
         /// </summary>
@@ -1792,7 +1792,7 @@ namespace FarmSimulator22Integrations.Parsers
                 return (this.Converter.Count != 0);
             }
         }
-        
+
         /// <summary>
         /// <para xml:lang="en">Initializes a new instance of the <see cref="MapFillTypeConvertersFillTypeConverter" /> class.</para>
         /// </summary>
@@ -1800,11 +1800,11 @@ namespace FarmSimulator22Integrations.Parsers
         {
             this._converter = new System.Collections.ObjectModel.Collection<MapFillTypeConvertersFillTypeConverterConverter>();
         }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute("name")]
         public string Name { get; set; }
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "2.0.629.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute("MapFillTypeConvertersFillTypeConverterConverter", Namespace="", AnonymousType=true)]
@@ -1812,23 +1812,23 @@ namespace FarmSimulator22Integrations.Parsers
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class MapFillTypeConvertersFillTypeConverterConverter
     {
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute("from")]
         public string From { get; set; }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute("to")]
         public string To { get; set; }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute("factor")]
         public float Factor { get; set; }
-        
+
         /// <summary>
         /// <para xml:lang="en">Gets or sets a value indicating whether the Factor property is specified.</para>
         /// </summary>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool FactorSpecified { get; set; }
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "2.0.629.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute("MapFillTypeSounds", Namespace="", AnonymousType=true)]
@@ -1836,10 +1836,10 @@ namespace FarmSimulator22Integrations.Parsers
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class MapFillTypeSounds
     {
-        
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         private System.Collections.ObjectModel.Collection<MapFillTypeSoundsFillTypeSound> _fillTypeSound;
-        
+
         [System.Xml.Serialization.XmlElementAttribute("fillTypeSound", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public System.Collections.ObjectModel.Collection<MapFillTypeSoundsFillTypeSound> FillTypeSound
         {
@@ -1852,7 +1852,7 @@ namespace FarmSimulator22Integrations.Parsers
                 this._fillTypeSound = value;
             }
         }
-        
+
         /// <summary>
         /// <para xml:lang="en">Gets a value indicating whether the FillTypeSound collection is empty.</para>
         /// </summary>
@@ -1864,7 +1864,7 @@ namespace FarmSimulator22Integrations.Parsers
                 return (this.FillTypeSound.Count != 0);
             }
         }
-        
+
         /// <summary>
         /// <para xml:lang="en">Initializes a new instance of the <see cref="MapFillTypeSounds" /> class.</para>
         /// </summary>
@@ -1873,7 +1873,7 @@ namespace FarmSimulator22Integrations.Parsers
             this._fillTypeSound = new System.Collections.ObjectModel.Collection<MapFillTypeSoundsFillTypeSound>();
         }
     }
-    
+
     [System.CodeDom.Compiler.GeneratedCodeAttribute("XmlSchemaClassGenerator", "2.0.629.0")]
     [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute("MapFillTypeSoundsFillTypeSound", Namespace="", AnonymousType=true)]
@@ -1881,16 +1881,16 @@ namespace FarmSimulator22Integrations.Parsers
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class MapFillTypeSoundsFillTypeSound
     {
-        
+
         [System.Xml.Serialization.XmlElementAttribute("sound", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public SoundManager_Sound Sound { get; set; }
-        
+
         [System.Xml.Serialization.XmlAttributeAttribute("fillTypes")]
         public string FillTypes { get; set; }
-        
+
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         private string _isDefault = "false";
-        
+
         /// <summary>
         /// <para xml:lang="en">Pattern: true|false.</para>
         /// </summary>
